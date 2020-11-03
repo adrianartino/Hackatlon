@@ -176,12 +176,14 @@ ol {
 }
 
 .primary-btn.normal-btn:before {
-	border-color: #c4c4c4;
+	border-color: #FF930F;
 }
 
 .primary-btn.normal-btn:after {
-	border-color: #c4c4c4;
+	border-color: #FF930F;
 }
+
+
 
 .primary-btn:before {
 	position: absolute;
@@ -1358,12 +1360,18 @@ ol {
 }
 
 .footer__about .footer__social a:hover {
-	color: #dfa667;
+	color: #b82c54;
 }
 
 .footer__about .footer__social a:last-child {
 	margin-right: 0;
 }
+
+.loguito
+{
+	border-bottom: 200px;
+}
+
 
 .footer__widget {
 	margin-bottom: 30px;
