@@ -25,6 +25,11 @@
     <link rel="stylesheet" href="css/slick.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
+    <!-- Animaciones-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     
 </head>
 
@@ -150,11 +155,11 @@
 
     <!-- About Section Begin -->
     <section id="objetivo" class="about spad">
-        <div  class="container">
-            <div class="row">
+        <div  class="container ">
+            <div class="row ">
                 <div class="col-lg-6">
                     <div class="about__text">
-                        <div class="section-title">
+                        <div class="section-title wow bounceInUp">
                             <span>Hackathon</span>
                             <h2>Objetivo</h2>
                         </div>
@@ -195,7 +200,7 @@
             <div class="row">
                 <div class="project__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project-1.jpg">
+                        <div class="project__slider__item set-bg" data-setbg="img/project/medios.png">
                             <div class="project__slider__item__hover">
                                 <h5>Medios de comunicación.</h5>
                                 <span>Plataformas de videoconferencias (Google Meet, Zoom, Jitsi, etc.) </span>
@@ -203,7 +208,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project-2.jpg">
+                        <div class="project__slider__item set-bg" data-setbg="img/project/equipo.png">
                             <div class="project__slider__item__hover">
                                 <h5>Integrantes de equipo.</h5>
                                 <span>4 Integrantes por equipo.</span>
@@ -211,7 +216,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project-3.jpg">
+                        <div class="project__slider__item set-bg" data-setbg="img/project/tiempo.png">
                             <div class="project__slider__item__hover">
                                 <h5>Duración del concusro.</h5>
                                 <span>72 horas (3 días: Viernes, Sabado y Domingo)</span>
@@ -219,7 +224,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project-4.jpg">
+                        <div class="project__slider__item set-bg" data-setbg="img/project/jurado.png">
                             <div class="project__slider__item__hover">
                                 <h5>Jurado Calificador</h5>
                                 <span>Desarrolladores de software expertos en TI de diferentes empresas laguneras.</span>
@@ -227,7 +232,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="project__slider__item set-bg" data-setbg="img/project/project-2.jpg">
+                        <div class="project__slider__item set-bg" data-setbg="img/project/app.png">
                             <div class="project__slider__item__hover">
                                 <h5>Aplicación.</h5>
                                 <span>Aplicación Web, Móvil o de Escritorio.</span>
@@ -623,19 +628,65 @@
                 </div>
             </div>
         </div>
+        <!-- BOTON PARA IR PARA ARRIBA -->
+    <a class="ir-arriba" javascript:void(0) title="Volver arriba">
+        <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-arrow-up fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
     </footer>
     </section>
+
+    
     
 <!-- Footer Section End -->
 
-<!-- Js Plugins -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.slicknav.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/main.js"></script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
 
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- Funciones JS -->
+    <script>
+        
+        
+
+
+        //Funcion hacia arriba
+        $(document).ready(function() { 
+            irArriba();
+        });
+
+        function irArriba() {
+            $('.ir-arriba').click(function() {
+                $('body,html').animate({
+                    scrollTop: '0px'
+                }, 1000);
+            });
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 0) {
+                    $('.ir-arriba').slideDown(600);
+                } else {
+                    $('.ir-arriba').slideUp(600);
+                }
+            });
+            $('.ir-abajo').click(function() {
+                $('body,html').animate({
+                    scrollTop: '1000px'
+                }, 1000);
+            });
+        }
+        
+    </script>
 
     <script>
         var end = new Date('12/25/2020 00:01 AM');
@@ -703,6 +754,12 @@
     
         timer = setInterval(showRemaining, 1000);
     </script>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+
 </body>
 
 </html>
