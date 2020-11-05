@@ -161,18 +161,22 @@
                                         <h5 >Nombre(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="nomlid" style="color: black;" type="text" placeholder="Ingrese nombre del lider de equipo">
+                                    name="nomlid" id="inputnl" style="color: black;" type="text" placeholder="Ingrese nombre del lider de equipo">
+                                    <p style="color: #b82c54;" id="error3"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">
                                         <h5 >Apellido(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="aplid" style="color: black;" type="text" placeholder="Ingrese apellidos del lider de equipo">
+                                    name="aplid" id="inputal" style="color: black;" type="text" placeholder="Ingrese apellidos del lider de equipo">
+                                    <p style="color: #b82c54;" id="error4"></p>
                                 </div>
+
+
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div style="padding-bottom: 7px;">
-                                        <h5 >Teléfono de contacto:</h5>
+                                        <h5 >Teléfono de contacto: <span style="color: #936264;">(opcional)</span></h5>
                                     </div>
                                     <input   onkeypress='return validaNumericos(event)'
                                      name="tellid" style="color: black;" type="tel" placeholder="Ingrese teléfono de contacto">
@@ -182,7 +186,7 @@
                                         <h5 >Correo Electrónico: <span style="color: red;">(obligatorio)</span></h5>
                                     </div>
                                     <input 
-                                    name="colid" style="color: black;" type="email" placeholder="Ingrese correo electrónico de contacto">
+                                    name="colid" style="color: black;" type="text" placeholder="Ingrese correo electrónico de contacto">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">

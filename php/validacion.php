@@ -28,6 +28,19 @@
     $apcuarto = $_POST['ap4'];
     $cacuarto = $_POST['ca4'];
 
+    $telefonobien = FALSE;
+    $telefonoingresado = FALSE;
+    $correobien = FALSE;
+
+    //si el correo está bien...
+    if(filter_var($correo, FILTER_VALIDATE_EMAIL)){
+        $correobien = TRUE;
+    }
+    else{
+        $correobien = FALSE;
+    }
+    
+
     //Validación si no se han ingresado datos.
     if ($equipo === '' && $institucion === '' 
     && $nombreLider === '' && $apellidoLider === '' && $telefono === '' && $correo === '' && $carreraLider == '' 
@@ -45,14 +58,70 @@
             echo json_encode('No se ha ingresado el nombre del equipo');
         }
 
+        //Si le falto ingresar el nombre de la institución...
         elseif($institucion == ''){
             echo json_encode('No se ha ingresado la institución');
         }
 
-        //Si ingreso todo bien
+        //Si le falto ingresar el nombre del lider...
+        elseif($nombreLider == ''){
+            echo json_encode('No ha ingresado el nombre del lider de equipo');
+        }
+
+        //Si le falto ingresar el apellido del lider...
+        elseif($apellidoLider == ''){
+            echo json_encode('No ha ingresado el apellido del lider de equipo');
+        }
+
+        //Si ingreso el telefono..
+        elseif($telefono != ''){
+            //variable para contar la longitud de teléfono.
+            $long = strlen($telefono);
+
+            //Si el numero es menor a 10 digitos..
+            if ($long < 10){
+                $telefonobien = FALSE;
+                echo json_encode('Ingrese un número de 10 dígitos');
+            }
+
+            //si tiene los 10 digitos...
+            else{
+                $telefonobien = TRUE;
+            }
+        }
+
+        //Si no ingresa el teléfono
+        elseif($telefono == ''){
+            //SE INDICA QUE DE TODAS FORMAS SE PUEDE INSCRIBIR, SOLO HABRA ERROR SI
+            //EL NUMERO ES MENOR A 10 DIGITOS
+            $telefonobien = TRUE;
+        }
+
+        //si los datos son correctos y no se ingreso teléfono, se registra aun así sin teléfono.
         else{
             echo json_encode('Se ingreso algo!!');
-        }   
-        
+        }
     }
+
+    //Si los datos son correctos y se ingreso teléfono de 10 digitos, se registra..
+    if($telefonobien == TRUE ){
+        //si el correo esta vacio..
+        if($correo == ''){
+            echo json_encode('No ha ingresado el correo electrónico');
+        }
+
+        //si el correo ingresado está mal...
+        elseif($correobien == FALSE){
+            echo json_encode('Ingrese el correo de la forma ejemplo@gmail.com');
+        }
+
+        elseif($carreraLider == ''){
+            echo json_encode('Ingrese la carrera del lider de equipo');
+        }
+
+        else{
+            echo json_encode('Se ingreso algo!!');
+        }
+    }
+
 ?>
