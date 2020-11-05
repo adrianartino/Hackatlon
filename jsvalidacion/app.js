@@ -21,17 +21,43 @@ formulario.addEventListener('submit', function(e){
         .then( data => {
             console.log(data)
 
-            if(data === 'error'){
+            if(data === 'No se ha ingresado el nombre del equipo'){
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
                     ${data}
                 </div>
                 `
+                error1.innerHTML = `
+                ${data}
+                `
+                inputequipo.style.border = '2px solid red';
             }
+
+            else if(data === 'No se ha ingresado la institución'){
+                respuesta.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ${data}
+                </div>
+                `
+                error2.innerHTML = `
+                ${data}
+                `
+                inputinst.style.border = '2px solid red';
+            }
+
+            else if(data === 'Se ingreso algo!!'){
+                respuesta.innerHTML = `
+                <div class="alert alert-success" role="alert">
+                    ${data}
+                </div>
+                `
+            }
+
+            //Si no se ingreso nada...
             else
             {
                 respuesta.innerHTML = `
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-danger" role="alert">
                     ${data}
                 </div>
                 `

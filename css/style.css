@@ -702,6 +702,10 @@ ol {
     vertical-align:middle;
 }
 
+.error {
+	border:2px solid red;
+}
+
 .project__slider__item__hover span {
 	color: #260e62;
 	font-size: 14px;
@@ -2536,7 +2540,7 @@ ol {
 	color: #b7b7b7;
 	padding-left: 20px;
 	border: 1px solid #e1e1e1;
-	margin-bottom: 30px;
+	margin-bottom: 4px;
 }
 
 .contact__form form input::-webkit-input-placeholder {

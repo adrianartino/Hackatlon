@@ -134,22 +134,26 @@
                     <div class="contact__form">
                         <form  id="formularioregistro">
                             <div class="row">
+
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div style="padding-bottom: 7px;">
                                         <h5>Nombre de equipo:</h5>
                                     </div>
                                     <input 
-                                    name="equipo" style="color: black;" type="text" placeholder="Ingrese nombre de equipo">
+                                    name="equipo" id="inputequipo" style="color: black;" type="text" placeholder="Ingrese nombre de equipo">
+                                    <p style="color: #b82c54;" id="error1"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div style="padding-bottom: 7px;">
                                         <h5 class="titu">Institución:</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="ins" style="color: black;" type="text" placeholder="Ingrese Institución">
+                                    name="ins" id="inputinst"style="color: black;" type="text" placeholder="Ingrese Institución">
+                                    <p style="color: #b82c54;" id="error2"></p>
                                 </div>
 
-                                <div class="col-lg-12">
+
+                                <div class="col-lg-12" style="padding-bottom: 15px;">
                                     <h3 style="color: #c76931;">Lider del equipo:</h3>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -175,9 +179,9 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">
-                                        <h5 >Correo Electrónico:</h5>
+                                        <h5 >Correo Electrónico: <span style="color: red;">(obligatorio)</span></h5>
                                     </div>
-                                    <input required
+                                    <input 
                                     name="colid" style="color: black;" type="email" placeholder="Ingrese correo electrónico de contacto">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
@@ -188,7 +192,7 @@
                                     name="calid" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
                                 </div>
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-12" style="padding-bottom: 15px;">
                                     <h3 style="color: #2f178d;">Segundo integrante:</h3>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -213,7 +217,7 @@
                                     name="ca2" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
                                 </div>
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-12" style="padding-bottom: 15px;">
                                     <h3 style="color: #b82c51;">Tercer integrante:</h3>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -239,7 +243,7 @@
                                     name="ca3" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
                                 </div>
 
-                                <div class="col-lg-12">
+                                <div class="col-lg-12" style="padding-bottom: 15px;">
                                     <h3 style="color: #711916;">Cuarto integrante:</h3>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
