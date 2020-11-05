@@ -21,7 +21,7 @@ formulario.addEventListener('submit', function(e){
         .then( data => {
             console.log(data)
 
-            //Validación si no ingresa el nombre
+    //Validación info de equipo
             if(data === 'No se ha ingresado el nombre del equipo'){
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
@@ -34,7 +34,6 @@ formulario.addEventListener('submit', function(e){
                 inputequipo.style.border = '2px solid red';
             }
 
-            //Validación si no ingresa la institución.
             else if(data === 'No se ha ingresado la institución'){
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
@@ -46,7 +45,8 @@ formulario.addEventListener('submit', function(e){
                 `
                 inputinst.style.border = '2px solid red';
             }
-
+    
+    //Validación lider de equipo
             else if(data === 'No ha ingresado el nombre del lider de equipo'){
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
@@ -111,7 +111,35 @@ formulario.addEventListener('submit', function(e){
                 `
             }
 
-            else if(data === 'Se ingreso algo!!'){
+    //Info integrante 2.
+            
+            else if(data === 'Ingrese el nombre del segundo integrante' || data === 'Ingrese el apellido del segundo integrante' || data === 'Ingrese la carrera del segundo integrante'){
+                respuesta.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ${data}
+                </div>
+                `
+            }
+
+    //Info integrante 3.
+            else if(data === 'Ingrese el nombre del tercer integrante' || data === 'Ingrese el apellido del tercer integrante' || data === 'Ingrese la carrera del tercer integrante'){
+                respuesta.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ${data}
+                </div>
+                `
+            }
+
+    //Info integrante 3.
+            else if(data === 'Ingrese el nombre del cuarto integrante' || data === 'Ingrese el apellido del cuarto integrante' || data === 'Ingrese la carrera del cuarto integrante'){
+                respuesta.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ${data}
+                </div>
+                `
+            }
+
+            else if(data === 'Se ha registrado correctamente!!'){
                 respuesta.innerHTML = `
                 <div class="alert alert-success" role="alert">
                     ${data}

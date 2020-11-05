@@ -114,13 +114,59 @@
         elseif($correobien == FALSE){
             echo json_encode('Ingrese el correo de la forma ejemplo@gmail.com');
         }
-
+        
+        //Si no ha ingresado la carrera del lider de equipo
         elseif($carreraLider == ''){
             echo json_encode('Ingrese la carrera del lider de equipo');
         }
 
+        //Si no ha ingresado el nombre del segundo integrante
+        elseif($nomsegundo == ''){
+            echo json_encode('Ingrese el nombre del segundo integrante');
+        }
+
+        //Si no ha ingresado el apellido del segundo integrante
+        elseif($apsegundo == ''){
+            echo json_encode('Ingrese el apellido del segundo integrante');
+        }
+
+        //Si no ha ingresado la carrera del segundo integrante
+        elseif($casegundo == ''){
+            echo json_encode('Ingrese la carrera del segundo integrante');
+        }
+
+        //Si no ha ingresado el nombre del tercer integrante
+        elseif($nomtercero == ''){
+            echo json_encode('Ingrese el nombre del tercer integrante');
+        }
+
+        //Si no ha ingresado el apellido del tercero integrante
+        elseif($aptercero == ''){
+            echo json_encode('Ingrese el apellido del tercer integrante');
+        }
+
+        //Si no ha ingresado la carrera del tercer integrante
+        elseif($catercero == ''){
+            echo json_encode('Ingrese la carrera del tercer integrante');
+        }
+
+        //Si no ha ingresado el nombre del cuarto integrante
+        elseif($nomcuarto == ''){
+            echo json_encode('Ingrese el nombre del cuarto integrante');
+        }
+
+        //Si no ha ingresado el apellido del cuarto integrante
+        elseif($apcuarto == ''){
+            echo json_encode('Ingrese el apellido del cuarto integrante');
+        }
+
+        //Si no ha ingresado la carrera del cuarto integrante
+        elseif($cacuarto == ''){
+            echo json_encode('Ingrese la carrera del cuarto integrante');
+        }
+
         else{
-            echo json_encode('Se ingreso algo!!');
+            echo json_encode('Se ha registrado correctamente!!');
         }
     }
 
