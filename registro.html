@@ -64,7 +64,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./index.html">Inicio</a></li>
                             <li><a href="./index.html#objetivo">Objetivo</a></li>
                             <li><a href="./index.html#bases">Bases</a></li>
                             <li><a href="./index.html#etapas">Etapas</a></li>
@@ -100,18 +100,39 @@
                         <div class="section-title">
                             <div class="section-title">
                                 <span>Hackathon</span>
-                                <h2>Registro</h2>
+                                <h2>Registro<span>Del 10 al 26 de noviembre.</span></h2>
                             </div>
                             <p class="text-justify">El registro consiste en registrar
                                 información básica de identificación y contacto de equipos.
                             </p>
+                            
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact__form__text">
+                            <p style="color: #4f38c5;" class="text-justify font-weight-bold">Recuerda que es necesario que cada integrante del
+                                equipo cuente con una cuenta de Zoom Meetings.
+                            </p>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact__form__text">
+                        <center>
+                        <img src="img/imagenes_pagina/zoom.png" alt="">
+                        </center>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact__form">
-                        <form action="#" method="POST">
+                        <form  id="formularioregistro">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div style="padding-bottom: 7px;">
@@ -241,12 +262,15 @@
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
                                     name="ca4" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
-                                </div>
-                                
 
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-success">Registrar equipo</button>
                         </form>
+                        <!-- cuadro para ver si algo está bien -->
+                        <div class="mt-3" id="respuesta">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -366,6 +390,7 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
+<script src="jsvalidacion/app.js"></script>
 
 <script>
     var end = new Date('12/25/2020 00:01 AM');
@@ -454,6 +479,7 @@
      return false;        
     }
 </script>
+
 
 </body>
 

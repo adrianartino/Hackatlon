@@ -1,7 +1,6 @@
 
 <?php 
 
-if(isset($_POST)){
     //variables equipo
     $equipo = $_POST['equipo'];
     $institucion = $_POST['ins'];
@@ -31,19 +30,14 @@ if(isset($_POST)){
     //Arreglo para errores
     $errores = "";
 
-    if ($equipo == ""){
+    if ($equipo === ''){
         $errores = "No ha ingresado el nombre";
     }
 
-    if ($errores ==""){
-        echo "Se ingreso el nombre";
+    if ($errores != ''){
+        echo json_encode('error');
     }
     else{
-        echo "No ha ingresado el nombre xd";
+        echo json_encode('Se ingreso el equipo:' .$equipo. '!!');
     }
-
-    
-
-}
-
 ?>

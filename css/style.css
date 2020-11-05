@@ -697,6 +697,11 @@ ol {
 	overflow: hidden;
 }
 
+[type="checkbox"]
+{
+    vertical-align:middle;
+}
+
 .project__slider__item__hover span {
 	color: #260e62;
 	font-size: 14px;
