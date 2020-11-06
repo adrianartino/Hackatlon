@@ -177,11 +177,20 @@
             $conexion = new mysqli($host, $user, $password, $dbname, $port, $socket) 
                 or die ('No se pudo conectar a la base de datos' . mysqli_connect_error());
 
-            $query = "INSERT INTO `hackaton`.`equipos` (`idequipo`, `nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('2', '$equipo', '$institucion', '$telefono', '$correo', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
+            
+            $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
             //INSERT INTO `hackaton`.`equipos` (`idequipo`, `nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('1', 'Los Bocadines', 'Itsl', '8717321111', 'marcos@gmail.com', 'Marcos', 'Artiño', 'Informática', 'Juan', 'Liendo', 'Informática', 'Hector', 'Gurrola', 'Informática', 'Brandon', 'Zapata', 'Informática');
+            $query2 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nombreLider', '$apellidoLider', '$carreraLider')";
+            $query3 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomsegundo', '$apsegundo', '$casegundo')";
+            $query4 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomtercero', '$aptercero', '$catercero')";
+            $query5 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomcuarto', '$apcuarto', '$cacuarto')";
 
-            if ($conexion->query($query) === true ){
+            if ($conexion->query($query) === true && $conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true){
                 echo json_encode('Se ha registrado correctamente!!');
+            }
+
+            else{
+                echo json_encode('Ya existe ese nombre de equipo!!');
             }
 
             

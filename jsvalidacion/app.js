@@ -383,6 +383,26 @@ formulario.addEventListener('submit', function(e){
                 })
             }
 
+            else if(data === 'Ya existe ese nombre de equipo!!')
+            {
+                respuesta.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ${data}
+                </div>
+                `
+                //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
+            }
             //Si no se ingreso nada...
             else
             {
