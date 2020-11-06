@@ -32,6 +32,18 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputequipo.style.border = '2px solid red';
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
             else if(data === 'No se ha ingresado la institución'){
@@ -44,6 +56,19 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputinst.style.border = '2px solid red';
+
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
     
     //Validación lider de equipo
@@ -57,6 +82,19 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputnl.style.border = '2px solid red';
+
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
             else if(data === 'No ha ingresado el apellido del lider de equipo'){
@@ -69,6 +107,19 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputal.style.border = '2px solid red'
+                
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
             else if(data === 'Ingrese un número de 10 dígitos'){
@@ -77,6 +128,23 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+                error5.innerHTML = `
+                ${data}
+                `
+                inputtel.style.border = '2px solid red'
+
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
             else if(data === 'El teléfono está correcto'){
@@ -85,6 +153,7 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+                
             }
 
             else if(data === 'No ha ingresado el correo electrónico'){
@@ -93,6 +162,24 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                error6.innerHTML = `
+                ${data}
+                `
+                inputcorreo.style.border = '2px solid red'
+
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }   
 
             else if(data === 'Ingrese el correo de la forma ejemplo@gmail.com'){
@@ -101,6 +188,24 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                error6.innerHTML = `
+                ${data}
+                `
+                inputcorreo.style.border = '2px solid red'
+
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
             else if(data === 'Ingrese la carrera del lider de equipo'){
@@ -109,6 +214,23 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                error7.innerHTML = `
+                ${data}
+                `
+                inputcali.style.border = '2px solid red'
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
     //Info integrante 2.
@@ -119,6 +241,41 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                if(data === 'Ingrese el nombre del segundo integrante'){
+                    error8.innerHTML = `
+                    ${data}
+                    `
+                    inputnom2.style.border = '2px solid red'
+                }
+
+                else if(data === 'Ingrese el apellido del segundo integrante'){
+                    error9.innerHTML = `
+                    ${data}
+                    `
+                    inputap2.style.border = '2px solid red'
+                }
+
+                else if(data === 'Ingrese la carrera del segundo integrante'){
+                    error10.innerHTML = `
+                    ${data}
+                    `
+                    inputca2.style.border = '2px solid red'
+                }
+
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
+                
             }
 
     //Info integrante 3.
@@ -128,6 +285,40 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+                if(data === 'Ingrese el nombre del tercer integrante'){
+                    error11.innerHTML = `
+                    ${data}
+                    `
+                    inputnom3.style.border = '2px solid red'
+                }
+
+                else if(data === 'Ingrese el apellido del tercer integrante'){
+                    error12.innerHTML = `
+                    ${data}
+                    `
+                    inputap3.style.border = '2px solid red'
+                }
+
+                else if(data === 'Ingrese la carrera del tercer integrante'){
+                    error13.innerHTML = `
+                    ${data}
+                    `
+                    inputca3.style.border = '2px solid red'
+                }
+
+                 //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
+                
             }
 
     //Info integrante 3.
@@ -137,6 +328,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+                if(data === 'Ingrese el nombre del cuarto integrante'){
+                    error14.innerHTML = `
+                    ${data}
+                    `
+                    inputnom4.style.border = '2px solid red'
+                }
+
+                else if(data === 'Ingrese el apellido del cuarto integrante'){
+                    error15.innerHTML = `
+                    ${data}
+                    `
+                    inputap4.style.border = '2px solid red'
+                }
+
+                else if(data === 'Ingrese la carrera del cuarto integrante'){
+                    error16.innerHTML = `
+                    ${data}
+                    `
+                    inputca4.style.border = '2px solid red'
+                }
+
+                 //Alerta de error.
+                 Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
             else if(data === 'Se ha registrado correctamente!!'){
@@ -145,6 +369,18 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+                 //Alerta de error.
+                 Swal.fire({
+                    icon: 'success',
+                    title: 'Registro Completado!',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
 
             //Si no se ingreso nada...
@@ -155,6 +391,18 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+                //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
             }
         })
 })

@@ -179,21 +179,24 @@
                                         <h5 >Teléfono de contacto: <span style="color: #936264;">(opcional)</span></h5>
                                     </div>
                                     <input   onkeypress='return validaNumericos(event)'
-                                     name="tellid" style="color: black;" type="tel" placeholder="Ingrese teléfono de contacto">
-                                </div>
+                                     name="tellid" id="inputtel" style="color: black;" type="tel" placeholder="Ingrese teléfono de contacto">
+                                     <p style="color: #b82c54;" id="error5"></p>
+                                    </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">
                                         <h5 >Correo Electrónico: <span style="color: red;">(obligatorio)</span></h5>
                                     </div>
                                     <input 
-                                    name="colid" style="color: black;" type="text" placeholder="Ingrese correo electrónico de contacto">
+                                    name="colid" id="inputcorreo" style="color: black;" type="text" placeholder="Ingrese correo electrónico de contacto">
+                                    <p style="color: #b82c54;" id="error6"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">
                                         <h5 >Carrera/Especialidad</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="calid" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
+                                    name="calid" id="inputcali" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
+                                    <p style="color: #b82c54;" id="error7"></p>
                                 </div>
 
                                 <div class="col-lg-12" style="padding-bottom: 15px;">
@@ -204,21 +207,24 @@
                                         <h5 >Nombre(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="nom2" style="color: black;" type="text" placeholder="Ingrese nombre del segundo integrante">
+                                    name="nom2" id="inputnom2" style="color: black;" type="text" placeholder="Ingrese nombre del segundo integrante">
+                                    <p style="color: #b82c54;" id="error8"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">
                                         <h5 >Apellido(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="ap2" style="color: black;" type="text" placeholder="Ingrese apellidos del segundo integrante">
+                                    name="ap2" id="inputap2" style="color: black;" type="text" placeholder="Ingrese apellidos del segundo integrante">
+                                    <p style="color: #b82c54;" id="error9"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div style="padding-bottom: 7px;">
                                         <h5 >Carrera/Especialidad</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="ca2" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
+                                    name="ca2" id="inputca2" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
+                                    <p style="color: #b82c54;" id="error10"></p>
                                 </div>
 
                                 <div class="col-lg-12" style="padding-bottom: 15px;">
@@ -229,14 +235,16 @@
                                         <h5 >Nombre(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="nom3" style="color: black;" type="text" placeholder="Ingrese nombre del tercer integrante">
+                                    name="nom3" id="inputnom3" style="color: black;" type="text" placeholder="Ingrese nombre del tercer integrante">
+                                    <p style="color: #b82c54;" id="error11"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">
                                         <h5 >Apellido(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="ap3" style="color: black;" type="text" placeholder="Ingrese apellidos del tercer integrante">
+                                    name="ap3" id="inputap3" style="color: black;" type="text" placeholder="Ingrese apellidos del tercer integrante">
+                                    <p style="color: #b82c54;" id="error12"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div style="padding-bottom: 7px;">
@@ -244,7 +252,8 @@
                                     </div>
                                     <input   
                                     onkeypress="return soloLetras(event)" 
-                                    name="ca3" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
+                                    name="ca3" id="inputca3" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
+                                    <p style="color: #b82c54;" id="error13"></p>
                                 </div>
 
                                 <div class="col-lg-12" style="padding-bottom: 15px;">
@@ -255,25 +264,30 @@
                                         <h5 style="color: #040414;">Nombre(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="nom4" style="color: black;" type="text" placeholder="Ingrese nombre del cuarto integrante">
+                                    name="nom4" id="inputnom4" style="color: black;" type="text" placeholder="Ingrese nombre del cuarto integrante">
+                                    <p style="color: #b82c54;" id="error14"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6" >
                                     <div style="padding-bottom: 7px;">
                                         <h5 style="color: #040414;">Apellido(s):</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="ap4" style="color: black;" type="text" placeholder="Ingrese apellidos del cuarto integrante">
+                                    name="ap4" id="inputap4" style="color: black;" type="text" placeholder="Ingrese apellidos del cuarto integrante">
+                                    <p style="color: #b82c54;" id="error15"></p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div style="padding-bottom: 7px;">
                                         <h5 style="color: #040414;">Carrera/Especialidad</h5>
                                     </div>
                                     <input  onkeypress="return soloLetras(event)" 
-                                    name="ca4" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
-
+                                    name="ca4"  id="inputca4" style="color: black;" type="text" placeholder="Ingrese carrera o especialidad">
+                                    <p style="color: #b82c54;" id="error16"></p>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">Registrar equipo</button>
+                            <br>
+                            <center>
+                                <button type="submit" class="btn btn-success">Registrar equipo</button>
+                            </center>
                         </form>
                         <!-- cuadro para ver si algo está bien -->
                         <div class="mt-3" id="respuesta">
@@ -398,7 +412,10 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
+<!-- Validacion js -->
 <script src="jsvalidacion/app.js"></script>
+<!-- Implementación sweet alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script>
     var end = new Date('12/25/2020 00:01 AM');
