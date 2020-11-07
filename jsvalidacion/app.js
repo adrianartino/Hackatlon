@@ -382,7 +382,7 @@ formulario.addEventListener('submit', function(e){
                 })
             }
 
-            else if(data === 'Ya existe ese nombre de equipo!!')
+            else if(data === 'Error en la base de datos!!')
             {
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
@@ -403,7 +403,7 @@ formulario.addEventListener('submit', function(e){
                 })
             }
 
-            else if(data === 'Error en el registro!!')
+            else if(data === 'Error en el servidor de correos!!')
             {
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
