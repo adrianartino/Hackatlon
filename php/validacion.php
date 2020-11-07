@@ -215,7 +215,7 @@
     
                 //Recipients
                 $mail->setFrom('marcosadrian2707@gmail.com', 'Hackaton');
-                $mail->addAddress('marcosadrian2707@gmail.com', 'Remitente');     // Add a recipient
+                $mail->addAddress($correo, 'Remitente');     // Add a recipient
     
                 // Attachments
                 $archivo = 'manual.pdf';
@@ -229,11 +229,11 @@
                 $mail->AddEmbeddedImage("zoom.png", "imagensitazoom", "zoom.png");
                 $mail->Body    = '<div>
                             <center>
-                                <h1>Bienvenidos al Hackaton 2020.</h1>
+                                <h1>Bienvenidos al Hackaton 2020!</h1>
                                 <img alt="PHPMailer" src="cid:imagensita">
                                 <h3 style="color: #b82c54;">Del 27 al 29 de Noviembre</h3>
-                                <h1>Hola Marcos Adrian!</h1>
-                                <h3>Has registrado al equipo Los bocadines al Hackaton 2020!</h3>
+                                <h1>Hola '.$nombreLider.' '.$apellidoLider.'!</h1>
+                                <h3>Has registrado al equipo '.$equipo.' al Hackaton 2020!</h3>
     
                                 <table>
                                     <tr style="background-color: #b82c54;">
@@ -244,30 +244,30 @@
                                     </tr>
     
                                     <tr>
-                                        <td>ITSL</td>
-                                        <td>Marcos Adrian Guerrero Artiño</td>
-                                        <td>Informática</td>
-                                        <td>Telefono: 8712805457</td>
+                                        <td>'.$institucion.'</td>
+                                        <td>'.$nombreLider.' '.$apellidoLider.'</td>
+                                        <td>'.$carreraLider.'</td>
+                                        <td>Telefono: '.$telefono.'</td>
                                     </tr>
     
                                     <tr>
                                         <td></td>
-                                        <td>Juan Liendo Palafox</td>
-                                        <td>Informática</td>
-                                        <td>Correo: marcosadrian@gmail.com</td>
+                                        <td>'.$nomsegundo.' '.$apsegundo.'</td>
+                                        <td>'.$casegundo.'</td>
+                                        <td>Correo: '.$correo.'</td>
                                     </tr>
     
                                     <tr>
                                         <td></td>
-                                        <td>Hector Gurrola Lopez</td>
-                                        <td>Informática</td>
+                                        <td>'.$nomtercero.' '.$aptercero.'</td>
+                                        <td>'.$catercero.'</td>
                                         <td></td>
                                     </tr>
     
                                     <tr>
                                         <td></td>
-                                        <td>Brandon Zapata Mora</td>
-                                        <td>Informática</td>
+                                        <td>'.$nomcuarto.' '.$apcuarto.'</td>
+                                        <td>'.$cacuarto.'</td>
                                         <td></td>
                                     </tr>
                                 </table>
