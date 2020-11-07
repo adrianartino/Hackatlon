@@ -32,6 +32,39 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputequipo.style.border = '2px solid red';
+
+                //Limpiar otros errores
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
                  //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -56,6 +89,39 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputinst.style.border = '2px solid red';
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
 
                  //Alerta de error.
                 Swal.fire({
@@ -83,6 +149,39 @@ formulario.addEventListener('submit', function(e){
                 `
                 inputnl.style.border = '2px solid red';
 
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
+
                  //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -107,6 +206,39 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputal.style.border = '2px solid red'
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
                 
                  //Alerta de error.
                 Swal.fire({
@@ -132,6 +264,39 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputtel.style.border = '2px solid red'
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
 
                  //Alerta de error.
                 Swal.fire({
@@ -168,6 +333,38 @@ formulario.addEventListener('submit', function(e){
                 `
                 inputcorreo.style.border = '2px solid red'
 
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
                  //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -194,6 +391,39 @@ formulario.addEventListener('submit', function(e){
                 `
                 inputcorreo.style.border = '2px solid red'
 
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
+
                  //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -219,6 +449,39 @@ formulario.addEventListener('submit', function(e){
                 ${data}
                 `
                 inputcali.style.border = '2px solid red'
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
                  //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -247,6 +510,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputnom2.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error9.innerHTML = ``
+                    error10.innerHTML = ``
+                    error11.innerHTML = ``
+                    error12.innerHTML = ``
+                    error13.innerHTML = ``
+                    error14.innerHTML = ``
+                    error15.innerHTML = ``
+                    error16.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputap2.style.border = '1px solid gray';
+                    inputca2.style.border = '1px solid gray';
+                    inputnom3.style.border = '1px solid gray';
+                    inputap3.style.border = '1px solid gray';
+                    inputca3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputap4.style.border = '1px solid gray';
+                    inputca4.style.border = '1px solid gray';
                 }
 
                 else if(data === 'Ingrese el apellido del segundo integrante'){
@@ -254,6 +550,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputap2.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error8.innerHTML = ``
+                    error10.innerHTML = ``
+                    error11.innerHTML = ``
+                    error12.innerHTML = ``
+                    error13.innerHTML = ``
+                    error14.innerHTML = ``
+                    error15.innerHTML = ``
+                    error16.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputnom2.style.border = '1px solid gray';
+                    inputca2.style.border = '1px solid gray';
+                    inputnom3.style.border = '1px solid gray';
+                    inputap3.style.border = '1px solid gray';
+                    inputca3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputap4.style.border = '1px solid gray';
+                    inputca4.style.border = '1px solid gray';
                 }
 
                 else if(data === 'Ingrese la carrera del segundo integrante'){
@@ -261,6 +590,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputca2.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error8.innerHTML = ``
+                    error9.innerHTML = ``
+                    error11.innerHTML = ``
+                    error12.innerHTML = ``
+                    error13.innerHTML = ``
+                    error14.innerHTML = ``
+                    error15.innerHTML = ``
+                    error16.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputnom2.style.border = '1px solid gray';
+                    inputap2.style.border = '1px solid gray';
+                    inputnom3.style.border = '1px solid gray';
+                    inputap3.style.border = '1px solid gray';
+                    inputca3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputap4.style.border = '1px solid gray';
+                    inputca4.style.border = '1px solid gray';
                 }
 
                  //Alerta de error.
@@ -290,6 +652,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputnom3.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error8.innerHTML = ``
+                    error9.innerHTML = ``
+                    error10.innerHTML = ``
+                    error12.innerHTML = ``
+                    error13.innerHTML = ``
+                    error14.innerHTML = ``
+                    error15.innerHTML = ``
+                    error16.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputnom2.style.border = '1px solid gray';
+                    inputap2.style.border = '1px solid gray';
+                    inputca2.style.border = '1px solid gray';
+                    inputap3.style.border = '1px solid gray';
+                    inputca3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputap4.style.border = '1px solid gray';
+                    inputca4.style.border = '1px solid gray';
                 }
 
                 else if(data === 'Ingrese el apellido del tercer integrante'){
@@ -297,6 +692,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputap3.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error8.innerHTML = ``
+                    error9.innerHTML = ``
+                    error10.innerHTML = ``
+                    error11.innerHTML = ``
+                    error13.innerHTML = ``
+                    error14.innerHTML = ``
+                    error15.innerHTML = ``
+                    error16.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputnom2.style.border = '1px solid gray';
+                    inputap2.style.border = '1px solid gray';
+                    inputca2.style.border = '1px solid gray';
+                    inputnom3.style.border = '1px solid gray';
+                    inputca3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputap4.style.border = '1px solid gray';
+                    inputca4.style.border = '1px solid gray';
                 }
 
                 else if(data === 'Ingrese la carrera del tercer integrante'){
@@ -304,6 +732,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputca3.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error8.innerHTML = ``
+                    error9.innerHTML = ``
+                    error10.innerHTML = ``
+                    error11.innerHTML = ``
+                    error12.innerHTML = ``
+                    error14.innerHTML = ``
+                    error15.innerHTML = ``
+                    error16.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputnom2.style.border = '1px solid gray';
+                    inputap2.style.border = '1px solid gray';
+                    inputca2.style.border = '1px solid gray';
+                    inputnom3.style.border = '1px solid gray';
+                    inputap3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputap4.style.border = '1px solid gray';
+                    inputca4.style.border = '1px solid gray';
                 }
 
                  //Alerta de error.
@@ -333,6 +794,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputnom4.style.border = '2px solid red'
+
+                     //Limpiar otros errores
+                     error1.innerHTML = ``
+                     error2.innerHTML = ``
+                     error3.innerHTML = ``
+                     error4.innerHTML = ``
+                     error5.innerHTML = ``
+                     error6.innerHTML = ``
+                     error7.innerHTML = ``
+                     error8.innerHTML = ``
+                     error9.innerHTML = ``
+                     error10.innerHTML = ``
+                     error11.innerHTML = ``
+                     error12.innerHTML = ``
+                     error13.innerHTML = ``
+                     error15.innerHTML = ``
+                     error16.innerHTML = ``
+ 
+                     inputequipo.style.border = '1px solid gray';
+                     inputinst.style.border = '1px solid gray';
+                     inputnl.style.border = '1px solid gray';
+                     inputal.style.border = '1px solid gray';
+                     inputtel.style.border = '1px solid gray';
+                     inputcorreo.style.border = '1px solid gray';
+                     inputcali.style.border = '1px solid gray';
+                     inputnom2.style.border = '1px solid gray';
+                     inputap2.style.border = '1px solid gray';
+                     inputca2.style.border = '1px solid gray';
+                     inputnom3.style.border = '1px solid gray';
+                     inputap3.style.border = '1px solid gray';
+                     inputca3.style.border = '1px solid gray';
+                     inputap4.style.border = '1px solid gray';
+                     inputca4.style.border = '1px solid gray';
                 }
 
                 else if(data === 'Ingrese el apellido del cuarto integrante'){
@@ -340,6 +834,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputap4.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error8.innerHTML = ``
+                    error9.innerHTML = ``
+                    error10.innerHTML = ``
+                    error11.innerHTML = ``
+                    error12.innerHTML = ``
+                    error13.innerHTML = ``
+                    error14.innerHTML = ``
+                    error16.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputnom2.style.border = '1px solid gray';
+                    inputap2.style.border = '1px solid gray';
+                    inputca2.style.border = '1px solid gray';
+                    inputnom3.style.border = '1px solid gray';
+                    inputap3.style.border = '1px solid gray';
+                    inputca3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputca4.style.border = '1px solid gray';
                 }
 
                 else if(data === 'Ingrese la carrera del cuarto integrante'){
@@ -347,6 +874,39 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                     `
                     inputca4.style.border = '2px solid red'
+
+                    //Limpiar otros errores
+                    error1.innerHTML = ``
+                    error2.innerHTML = ``
+                    error3.innerHTML = ``
+                    error4.innerHTML = ``
+                    error5.innerHTML = ``
+                    error6.innerHTML = ``
+                    error7.innerHTML = ``
+                    error8.innerHTML = ``
+                    error9.innerHTML = ``
+                    error10.innerHTML = ``
+                    error11.innerHTML = ``
+                    error12.innerHTML = ``
+                    error13.innerHTML = ``
+                    error14.innerHTML = ``
+                    error15.innerHTML = ``
+
+                    inputequipo.style.border = '1px solid gray';
+                    inputinst.style.border = '1px solid gray';
+                    inputnl.style.border = '1px solid gray';
+                    inputal.style.border = '1px solid gray';
+                    inputtel.style.border = '1px solid gray';
+                    inputcorreo.style.border = '1px solid gray';
+                    inputcali.style.border = '1px solid gray';
+                    inputnom2.style.border = '1px solid gray';
+                    inputap2.style.border = '1px solid gray';
+                    inputca2.style.border = '1px solid gray';
+                    inputnom3.style.border = '1px solid gray';
+                    inputap3.style.border = '1px solid gray';
+                    inputca3.style.border = '1px solid gray';
+                    inputnom4.style.border = '1px solid gray';
+                    inputap4.style.border = '1px solid gray';
                 }
 
                  //Alerta de error.
