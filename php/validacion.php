@@ -1,5 +1,15 @@
 
-<?php 
+<?php
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'phpmailer/Exception.php';
+    require 'phpmailer/PHPMailer.php';
+    require 'phpmailer/SMTP.php';
+
+    $mail = new PHPMailer(true);
 
 
     //variables equipo
@@ -31,141 +41,142 @@
     $telefonobien = FALSE;
     $telefonoingresado = FALSE;
     $correobien = FALSE;
+    $registrado = FALSE;
 
     //si el correo está bien...
-    if(filter_var($correo, FILTER_VALIDATE_EMAIL)){
+    if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
         $correobien = TRUE;
-    }
-    else{
+    } else {
         $correobien = FALSE;
     }
-    
+
+
 
     //Validación si no se han ingresado datos.
-    if ($equipo === '' && $institucion === '' 
-    && $nombreLider === '' && $apellidoLider === '' && $telefono === '' && $correo === '' && $carreraLider == '' 
-    && $nomsegundo === '' && $apsegundo === '' && $casegundo === '' 
-    && $nomtercero === '' && $aptercero === '' && $catercero === '' 
-    && $nomcuarto === '' && $apcuarto === '' && $cacuarto === ''){
+    if (
+        $equipo === '' && $institucion === ''
+        && $nombreLider === '' && $apellidoLider === '' && $telefono === '' && $correo === '' && $carreraLider == ''
+        && $nomsegundo === '' && $apsegundo === '' && $casegundo === ''
+        && $nomtercero === '' && $aptercero === '' && $catercero === ''
+        && $nomcuarto === '' && $apcuarto === '' && $cacuarto === ''
+    ) {
         echo json_encode('No se han ingresado datos');
     }
-    
+
     //Si ingreso datos..
-    else{
+    else {
 
         //Si le falto ingresar el nombre del equipo...
-        if($equipo === ''){
+        if ($equipo === '') {
             echo json_encode('No se ha ingresado el nombre del equipo');
         }
 
         //Si le falto ingresar el nombre de la institución...
-        elseif($institucion == ''){
+        elseif ($institucion == '') {
             echo json_encode('No se ha ingresado la institución');
         }
 
         //Si le falto ingresar el nombre del lider...
-        elseif($nombreLider == ''){
+        elseif ($nombreLider == '') {
             echo json_encode('No ha ingresado el nombre del lider de equipo');
         }
 
         //Si le falto ingresar el apellido del lider...
-        elseif($apellidoLider == ''){
+        elseif ($apellidoLider == '') {
             echo json_encode('No ha ingresado el apellido del lider de equipo');
         }
 
         //Si ingreso el telefono..
-        elseif($telefono != ''){
+        elseif ($telefono != '') {
             //variable para contar la longitud de teléfono.
             $long = strlen($telefono);
 
             //Si el numero es menor a 10 digitos..
-            if ($long < 10){
+            if ($long < 10) {
                 $telefonobien = FALSE;
                 echo json_encode('Ingrese un número de 10 dígitos');
             }
 
             //si tiene los 10 digitos...
-            else{
+            else {
                 $telefonobien = TRUE;
             }
         }
 
         //Si no ingresa el teléfono
-        elseif($telefono == ''){
+        elseif ($telefono == '') {
             //SE INDICA QUE DE TODAS FORMAS SE PUEDE INSCRIBIR, SOLO HABRA ERROR SI
             //EL NUMERO ES MENOR A 10 DIGITOS
             $telefonobien = TRUE;
         }
 
         //si los datos son correctos y no se ingreso teléfono, se registra aun así sin teléfono.
-        else{
+        else {
             echo json_encode('Se ingreso algo!!');
         }
     }
 
     //Si los datos son correctos y se ingreso teléfono de 10 digitos, se registra..
-    if($telefonobien == TRUE ){
+    if ($telefonobien == TRUE) {
         //si el correo esta vacio..
-        if($correo == ''){
+        if ($correo == '') {
             echo json_encode('No ha ingresado el correo electrónico');
         }
 
         //si el correo ingresado está mal...
-        elseif($correobien == FALSE){
+        elseif ($correobien == FALSE) {
             echo json_encode('Ingrese el correo de la forma ejemplo@gmail.com');
         }
-        
+
         //Si no ha ingresado la carrera del lider de equipo
-        elseif($carreraLider == ''){
+        elseif ($carreraLider == '') {
             echo json_encode('Ingrese la carrera del lider de equipo');
         }
 
         //Si no ha ingresado el nombre del segundo integrante
-        elseif($nomsegundo == ''){
+        elseif ($nomsegundo == '') {
             echo json_encode('Ingrese el nombre del segundo integrante');
         }
 
         //Si no ha ingresado el apellido del segundo integrante
-        elseif($apsegundo == ''){
+        elseif ($apsegundo == '') {
             echo json_encode('Ingrese el apellido del segundo integrante');
         }
 
         //Si no ha ingresado la carrera del segundo integrante
-        elseif($casegundo == ''){
+        elseif ($casegundo == '') {
             echo json_encode('Ingrese la carrera del segundo integrante');
         }
 
         //Si no ha ingresado el nombre del tercer integrante
-        elseif($nomtercero == ''){
+        elseif ($nomtercero == '') {
             echo json_encode('Ingrese el nombre del tercer integrante');
         }
 
         //Si no ha ingresado el apellido del tercero integrante
-        elseif($aptercero == ''){
+        elseif ($aptercero == '') {
             echo json_encode('Ingrese el apellido del tercer integrante');
         }
 
         //Si no ha ingresado la carrera del tercer integrante
-        elseif($catercero == ''){
+        elseif ($catercero == '') {
             echo json_encode('Ingrese la carrera del tercer integrante');
         }
 
         //Si no ha ingresado el nombre del cuarto integrante
-        elseif($nomcuarto == ''){
+        elseif ($nomcuarto == '') {
             echo json_encode('Ingrese el nombre del cuarto integrante');
         }
 
         //Si no ha ingresado el apellido del cuarto integrante
-        elseif($apcuarto == ''){
+        elseif ($apcuarto == '') {
             echo json_encode('Ingrese el apellido del cuarto integrante');
         }
 
         //Si no ha ingresado la carrera del cuarto integrante
-        elseif($cacuarto == ''){
+        elseif ($cacuarto == '') {
             echo json_encode('Ingrese la carrera del cuarto integrante');
-        }
-
-        else{
+        } else {
 
             $host = "127.0.0.1";
             $port = 3305;
@@ -174,10 +185,10 @@
             $password = "Marcos619!";
             $dbname = "hackaton";
 
-            $conexion = new mysqli($host, $user, $password, $dbname, $port, $socket) 
-                or die ('No se pudo conectar a la base de datos' . mysqli_connect_error());
+            $conexion = new mysqli($host, $user, $password, $dbname, $port, $socket)
+                or die('No se pudo conectar a la base de datos' . mysqli_connect_error());
 
-            
+
             $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
             //INSERT INTO `hackaton`.`equipos` (`idequipo`, `nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('1', 'Los Bocadines', 'Itsl', '8717321111', 'marcos@gmail.com', 'Marcos', 'Artiño', 'Informática', 'Juan', 'Liendo', 'Informática', 'Hector', 'Gurrola', 'Informática', 'Brandon', 'Zapata', 'Informática');
             $query2 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nombreLider', '$apellidoLider', '$carreraLider')";
@@ -185,16 +196,95 @@
             $query4 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomtercero', '$aptercero', '$catercero')";
             $query5 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomcuarto', '$apcuarto', '$cacuarto')";
 
-            if ($conexion->query($query) === true && $conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true){
-                echo json_encode('Se ha registrado correctamente!!');
-            }
-
-            else{
+            if ($conexion->query($query) === true && $conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true) {
+                
+                try {
+                    //Server settings
+                    $mail->SMTPDebug = 0;                      // Enable verbose debug output
+                    $mail->isSMTP();                                            // Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                    $mail->Username   = 'marcosadrian2707@gmail.com';                     // SMTP username
+                    $mail->Password   = 'marcos619';                               // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        
+                    //Recipients
+                    $mail->setFrom('marcosadrian2707@gmail.com', 'Hackaton');
+                    $mail->addAddress('marcosadrian2707@gmail.com', 'Remitente');     // Add a recipient
+        
+                    // Attachments
+                    //$archivo = '/recursosmailer/manual.pdf';
+                    //$mail->addAttachment($archivo, $archivo);         // Add attachments
+                    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        
+                    // Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = 'Registro Hackaton 2020';
+                    $mail->Body    = '<div>
+                                <center>
+                                    <h1>Bienvenidos al Hackaton 2020.</h1>
+                                    <h3 style="color: #b82c54;">Del 27 al 29 de Noviembre</h3>
+                                    <h1>Hola Marcos Adrian!</h1>
+                                    <h3>Has registrado al equipo Los bocadines al Hackaton 2020!</h3>
+        
+                                    <table>
+                                        <tr style="background-color: #b82c54;">
+                                            <th>Institución:</th>
+                                            <th>Integrantes:</th>
+                                            <th>Carreras:</th>
+                                            <th>Contacto:</th>
+                                        </tr>
+        
+                                        <tr>
+                                            <td>ITSL</td>
+                                            <td>Marcos Adrian Guerrero Artiño</td>
+                                            <td>Informática</td>
+                                            <td>Telefono: 8712805457</td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td></td>
+                                            <td>Juan Liendo Palafox</td>
+                                            <td>Informática</td>
+                                            <td>Correo: marcosadrian@gmail.com</td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td></td>
+                                            <td>Hector Gurrola Lopez</td>
+                                            <td>Informática</td>
+                                            <td></td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td></td>
+                                            <td>Brandon Zapata Mora</td>
+                                            <td>Informática</td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+        
+                                    <h4>Estan listos para las 72 horas?</h4>
+                                    <h5>Nos mantendremos en contacto contigo en los proximos días.</h5>
+                                    <br>
+                                    <h1 style="color: #19B7E1;">Link de Zoom: </h1>
+                                    <h2 style="color: black;">linkblablabla</h2>
+                                    <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 16 Hrs.</h3>
+                                </center>
+                            </div>';
+        
+                    $mail->send();
+                    echo json_encode('Se ha registrado correctamente!!');
+                } catch (Exception $e) {
+                    echo json_encode('Error en el registro!!');
+                }
+                
+            } else {
                 echo json_encode('Ya existe ese nombre de equipo!!');
             }
-
-            
         }
     }
+
 
 ?>
