@@ -42,6 +42,7 @@
     $telefonoingresado = FALSE;
     $correobien = FALSE;
     $registrado = FALSE;
+    $nombreExiste = FALSE;
 
     //si el correo está bien...
     if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
@@ -188,113 +189,136 @@
             $conexion = new mysqli($host, $user, $password, $dbname, $port, $socket)
                 or die('No se pudo conectar a la base de datos' . mysqli_connect_error());
 
-
-            //condicion si el nombre de equipo ingresado ya existe..
-
-            //Condicion si alguien del equipo ya está en otro equipo..
-
-            //Si no se cumple ninguna de esas condiciones, registrar..
-            $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
-            //INSERT INTO `hackaton`.`equipos` (`idequipo`, `nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('1', 'Los Bocadines', 'Itsl', '8717321111', 'marcos@gmail.com', 'Marcos', 'Artiño', 'Informática', 'Juan', 'Liendo', 'Informática', 'Hector', 'Gurrola', 'Informática', 'Brandon', 'Zapata', 'Informática');
-            $query2 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nombreLider', '$apellidoLider', '$carreraLider')";
-            $query3 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomsegundo', '$apsegundo', '$casegundo')";
-            $query4 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomtercero', '$aptercero', '$catercero')";
-            $query5 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomcuarto', '$apcuarto', '$cacuarto')";
-
-            
-            try {
-                //Server settings
-                $mail->SMTPDebug = 0;                      // Enable verbose debug output
-                $mail->isSMTP();                                            // Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                $mail->Username   = 'hackaton@lerdo.tecnm.mx';                     // SMTP username
-                $mail->Password   = 'Hackaanmp!21';                               // SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-    
-                //Recipients
-                $mail->setFrom('hackaton@lerdo.tecnm.mx', 'Hackaton');
-                $mail->addAddress($correo, $equipo);     // Add a recipient
-    
-                // Attachments
-                $archivo = 'manual.pdf';
-                $mail->addAttachment($archivo,$archivo);          // Add attachments
-                //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-    
-                // Content
-                $mail->isHTML(true);                                  // Set email format to HTML
-                $mail->Subject = 'Registro Hackaton 2020';
-                $mail->AddEmbeddedImage("logooo3.png", "imagensita", "logooo3.png"); 
-                $mail->AddEmbeddedImage("zoom.png", "imagensitazoom", "zoom.png");
-                $mail->Body    = '<div>
-                            <center>
-                                <h1>Bienvenidos al Hackaton 2020!</h1>
-                                <img alt="PHPMailer" src="cid:imagensita">
-                                <h3 style="color: #b82c54;">Del 27 al 29 de Noviembre</h3>
-                                <h1>Hola '.$nombreLider.' '.$apellidoLider.'!</h1>
-                                <h3>Has registrado al equipo '.$equipo.' al Hackaton 2020!</h3>
-    
-                                <table>
-                                    <tr style="background-color: #b82c54;">
-                                        <th>Institución:</th>
-                                        <th>Integrantes:</th>
-                                        <th>Carreras:</th>
-                                        <th>Contacto:</th>
-                                    </tr>
-    
-                                    <tr>
-                                        <td>'.$institucion.'</td>
-                                        <td>'.$nombreLider.' '.$apellidoLider.'</td>
-                                        <td>'.$carreraLider.'</td>
-                                        <td>Telefono: '.$telefono.'</td>
-                                    </tr>
-    
-                                    <tr>
-                                        <td></td>
-                                        <td>'.$nomsegundo.' '.$apsegundo.'</td>
-                                        <td>'.$casegundo.'</td>
-                                        <td>Correo: '.$correo.'</td>
-                                    </tr>
-    
-                                    <tr>
-                                        <td></td>
-                                        <td>'.$nomtercero.' '.$aptercero.'</td>
-                                        <td>'.$catercero.'</td>
-                                        <td></td>
-                                    </tr>
-    
-                                    <tr>
-                                        <td></td>
-                                        <td>'.$nomcuarto.' '.$apcuarto.'</td>
-                                        <td>'.$cacuarto.'</td>
-                                        <td></td>
-                                    </tr>
-                                </table>
-    
-                                <h4>Estan listos para las 72 horas?</h4>
-                                <h5>Nos mantendremos en contacto contigo en los proximos días.</h5>
-                                <br>
-                                <h1 style="color: #19B7E1;">Link de Zoom: </h1>
-                                <img alt="PHPMailer" src="cid:imagensitazoom">
-                                <h2 style="color: black;">linkblablabla</h2>
-                                <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 16 Hrs.</h3>
-                            </center>
-                        </div>';
-    
-                $mail->send();
-                if ($conexion->query($query) === true && $conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true) {
-                    echo json_encode('Se ha registrado correctamente!!');
-                    
-                } 
-                
-                else {
-                    echo json_encode('Error en la base de datos!!');
-                }
-            } catch (Exception $e) {
-                echo json_encode('Error en el servidor de correos!!');
+            $resNombres = mysqli_query($conexion,"SELECT nombre_equipo FROM hackaton.equipos");
+            $arrayNombres = array();
+            while($consulta = mysqli_fetch_array($resNombres))
+            {
+                $arrayNombres[] = $consulta["nombre_equipo"]; //Guarda los nombres en el array
             }
 
+            $numEquipos = count($arrayNombres);
+
+            for($i=0; $i<$numEquipos; $i++){
+                if($equipo == $arrayNombres[$i]){
+                    $nombreExiste = TRUE;
+                }
+            }
+
+            if($nombreExiste == TRUE){
+                echo json_encode('Ya existe ese nombre de equipo!');
+            }
+
+            else{
+                //Condicion si alguien del equipo ya está en otro equipo..
+
+                //Si no se cumple ninguna de esas condiciones, registrar..
+                $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
+                //INSERT INTO `hackaton`.`equipos` (`idequipo`, `nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('1', 'Los Bocadines', 'Itsl', '8717321111', 'marcos@gmail.com', 'Marcos', 'Artiño', 'Informática', 'Juan', 'Liendo', 'Informática', 'Hector', 'Gurrola', 'Informática', 'Brandon', 'Zapata', 'Informática');
+                $query2 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nombreLider', '$apellidoLider', '$carreraLider')";
+                $query3 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomsegundo', '$apsegundo', '$casegundo')";
+                $query4 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomtercero', '$aptercero', '$catercero')";
+                $query5 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomcuarto', '$apcuarto', '$cacuarto')";
+
+                
+
+                try {
+                    //Server settings
+                    $mail->SMTPDebug = 0;                      // Enable verbose debug output
+                    $mail->isSMTP();                                            // Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                    $mail->Username   = 'hackaton@lerdo.tecnm.mx';                     // SMTP username
+                    $mail->Password   = 'Hackaanmp!21';                               // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        
+                    //Recipients
+                    $mail->setFrom('hackaton@lerdo.tecnm.mx', 'Hackaton');
+                    $mail->addAddress($correo, $equipo);     // Add a recipient
+        
+                    // Attachments
+                    $archivo = 'manual.pdf';
+                    $mail->addAttachment($archivo,$archivo);          // Add attachments
+                    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        
+                    // Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = 'Registro Hackaton 2020';
+                    $mail->AddEmbeddedImage("logooo3.png", "imagensita", "logooo3.png"); 
+                    $mail->AddEmbeddedImage("zoom.png", "imagensitazoom", "zoom.png");
+                    $mail->Body    = '<div>
+                                <center>
+                                    <h1>Bienvenidos al Hackaton 2020!</h1>
+                                    <img alt="PHPMailer" src="cid:imagensita">
+                                    <h3 style="color: #b82c54;">Del 27 al 29 de Noviembre</h3>
+                                    <h1>Hola '.$nombreLider.' '.$apellidoLider.'!</h1>
+                                    <h3>Has registrado al equipo '.$equipo.' al Hackaton 2020!</h3>
+        
+                                    <table>
+                                        <tr style="background-color: #b82c54;">
+                                            <th>Institución:</th>
+                                            <th>Integrantes:</th>
+                                            <th>Carreras:</th>
+                                            <th>Contacto:</th>
+                                        </tr>
+        
+                                        <tr>
+                                            <td>'.$institucion.'</td>
+                                            <td>'.$nombreLider.' '.$apellidoLider.'</td>
+                                            <td>'.$carreraLider.'</td>
+                                            <td>Telefono: '.$telefono.'</td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td></td>
+                                            <td>'.$nomsegundo.' '.$apsegundo.'</td>
+                                            <td>'.$casegundo.'</td>
+                                            <td>Correo: '.$correo.'</td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td></td>
+                                            <td>'.$nomtercero.' '.$aptercero.'</td>
+                                            <td>'.$catercero.'</td>
+                                            <td></td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td></td>
+                                            <td>'.$nomcuarto.' '.$apcuarto.'</td>
+                                            <td>'.$cacuarto.'</td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+        
+                                    <h4>Estan listos para las 72 horas?</h4>
+                                    <h5>Nos mantendremos en contacto contigo en los proximos días.</h5>
+                                    <br>
+                                    <h1 style="color: #19B7E1;">Link de Zoom: </h1>
+                                    <img alt="PHPMailer" src="cid:imagensitazoom">
+                                    <h2 style="color: black;">linkblablabla</h2>
+                                    <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 16 Hrs.</h3>
+                                </center>
+                            </div>';
+        
+                    
+                    if ($conexion->query($query) === true && $conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true) {
+                        $mail->send();
+                        echo json_encode('Se ha registrado correctamente!!');
+                    } 
+                    
+                    //Si hay un error en la base de datos, indica el error y no se manda el correo.
+                    else {
+                        echo json_encode('Error en la base de datos!!');
+                    }
+                } catch (Exception $e) {
+                    echo json_encode('Error en el servidor de correos!!');
+                }
+
+            }
+
+            
+            
             
         }
     }
