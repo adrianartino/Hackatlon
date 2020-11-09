@@ -1,9 +1,7 @@
 
 //validación de registro.
-
 var formulario = document.getElementById('formularioregistro');
 var respuesta = document.getElementById('respuesta');
-
 //detectar cuando el usuario de clic al botón.
 formulario.addEventListener('submit', function(e){
 
