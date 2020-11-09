@@ -991,6 +991,44 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+                error1.innerHTML = `
+                ${data}
+                `
+                inputequipo.style.border = '2px solid red';
+
+                //Limpiar otros errores
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
+
                 //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -999,8 +1037,25 @@ formulario.addEventListener('submit', function(e){
                     confirmButtonText: 'Entendido',
                     confirmButtonColor: '#b82c54',
                     footer: '<span class= "foorojo">Hackaton 2020</span>',
-                    timer: 3000,
-                    timerProgressVar: true,
+                    allowOutsideClick: true
+                })
+            }
+
+            else if(data === 'Un integrante del equipo ya forma parte de un equipo existente!')
+            {
+                respuesta.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ${data}
+                </div>
+                `
+                //Alerta de error.
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
                     allowOutsideClick: true
                 })
             }
