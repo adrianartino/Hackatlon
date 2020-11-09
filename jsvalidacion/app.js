@@ -4,11 +4,17 @@
 var formulario = document.getElementById('formularioregistro');
 var respuesta = document.getElementById('respuesta');
 
+var boton = document.getElementById('botonreg');
+boton.disbled = false;
+
 //detectar cuando el usuario de clic al botón.
 formulario.addEventListener('submit', function(e){
 
     e.preventDefault(); //pervenir recargar la pagina.
     console.log('me diste un click xd');
+
+    
+
 
     var datos = new FormData(formulario);
 
@@ -23,6 +29,9 @@ formulario.addEventListener('submit', function(e){
 
     //Validación info de equipo
             if(data === 'No se ha ingresado el nombre del equipo'){
+
+
+
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
                     ${data}
@@ -929,6 +938,41 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
                  //Alerta de error.
                  Swal.fire({
                     icon: 'success',
@@ -949,6 +993,42 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
+                
                 //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -970,6 +1050,41 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
                 //Alerta de error.
                 Swal.fire({
                     icon: 'error',
@@ -1048,6 +1163,41 @@ formulario.addEventListener('submit', function(e){
                     ${data}
                 </div>
                 `
+
+                //Limpiar otros errores
+                error1.innerHTML = ``
+                error2.innerHTML = ``
+                error3.innerHTML = ``
+                error4.innerHTML = ``
+                error5.innerHTML = ``
+                error6.innerHTML = ``
+                error7.innerHTML = ``
+                error8.innerHTML = ``
+                error9.innerHTML = ``
+                error10.innerHTML = ``
+                error11.innerHTML = ``
+                error12.innerHTML = ``
+                error13.innerHTML = ``
+                error14.innerHTML = ``
+                error15.innerHTML = ``
+                error16.innerHTML = ``
+
+                inputequipo.style.border = '1px solid gray';
+                inputinst.style.border = '1px solid gray';
+                inputnl.style.border = '1px solid gray';
+                inputal.style.border = '1px solid gray';
+                inputtel.style.border = '1px solid gray';
+                inputcorreo.style.border = '1px solid gray';
+                inputcali.style.border = '1px solid gray';
+                inputnom2.style.border = '1px solid gray';
+                inputap2.style.border = '1px solid gray';
+                inputca2.style.border = '1px solid gray';
+                inputnom3.style.border = '1px solid gray';
+                inputap3.style.border = '1px solid gray';
+                inputca3.style.border = '1px solid gray';
+                inputnom4.style.border = '1px solid gray';
+                inputap4.style.border = '1px solid gray';
+                inputca4.style.border = '1px solid gray';
                 //Alerta de error.
                 Swal.fire({
                     icon: 'error',

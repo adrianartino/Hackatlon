@@ -45,6 +45,10 @@
     $nombreExiste = FALSE;
     $integranteExiste = FALSE;
 
+    date_default_timezone_set('America/Mexico_City');
+    $fecha =  date("Y-m-d"); 
+    $hora = date("G:i:s");
+
     //si el correo está bien...
     if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
         $correobien = TRUE;
@@ -180,14 +184,10 @@
             echo json_encode('Ingrese la carrera del cuarto integrante');
         } else {
 
-            $host = "127.0.0.1";
-            $port = 3305;
-            $socket = "";
-            $user = "marcos";
-            $password = "Marcos619!";
-            $dbname = "hackaton";
+            include 'config.php'; //Inclución archivo configuración.
+            
 
-            $conexion = new mysqli($host, $user, $password, $dbname, $port, $socket)
+            $conexion = new mysqli($Host, $User, $Password, $Dbname, $Port, $Socket)
                 or die('No se pudo conectar a la base de datos' . mysqli_connect_error());
 
             $resNombres = mysqli_query($conexion,"SELECT nombre_equipo FROM hackaton.equipos");
@@ -240,13 +240,12 @@
                 }
 
                 else{
+
+                    
                     //Si no se cumple ninguna de esas condiciones, registrar..
-                    $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
+                    $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `fecha_registro`, `hora_registro`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$fecha', '$hora', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
                     //INSERT INTO `hackaton`.`equipos` (`idequipo`, `nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('1', 'Los Bocadines', 'Itsl', '8717321111', 'marcos@gmail.com', 'Marcos', 'Artiño', 'Informática', 'Juan', 'Liendo', 'Informática', 'Hector', 'Gurrola', 'Informática', 'Brandon', 'Zapata', 'Informática');
-                    $query2 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nombreLider', '$apellidoLider', '$carreraLider')";
-                    $query3 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomsegundo', '$apsegundo', '$casegundo')";
-                    $query4 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomtercero', '$aptercero', '$catercero')";
-                    $query5 = "INSERT INTO `hackaton`.`participantes` (`nombre_equipo`, `nombre`, `apellido`, `carrera`) VALUES ('$equipo', '$nomcuarto', '$apcuarto', '$cacuarto')";
+                    
 
                     
 
@@ -256,13 +255,13 @@
                         $mail->isSMTP();                                            // Send using SMTP
                         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
                         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                        $mail->Username   = 'hackaton@lerdo.tecnm.mx';                     // SMTP username
-                        $mail->Password   = 'Hackaanmp!21';                               // SMTP password
+                        $mail->Username   = $Maincorreo;                     // SMTP username
+                        $mail->Password   = $Pwd;                               // SMTP password
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                         $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             
                         //Recipients
-                        $mail->setFrom('hackaton@lerdo.tecnm.mx', 'Hackaton');
+                        $mail->setFrom($Maincorreo, 'Hackaton');
                         $mail->addAddress($correo, $equipo);     // Add a recipient
             
                         // Attachments
@@ -330,10 +329,21 @@
                                     </center>
                                 </div>';
             
-                        
-                        if ($conexion->query($query) === true && $conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true) {
-                            $mail->send();
-                            echo json_encode('Se ha registrado correctamente!!');
+                        //Si guarda y registra al equipo correctamente...
+                        if ($conexion->query($query) === true ) {
+                            
+                            $ultimo_id = $conexion->insert_id; //Ultimo id agregado.
+                            //Guardamos a los participantes una vez registrado.
+                            $query2 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nombreLider', '$apellidoLider', '$fecha', '$hora')";
+                            $query3 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomsegundo', '$apsegundo', '$fecha', '$hora')";
+                            $query4 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomtercero', '$aptercero', '$fecha', '$hora')";
+                            $query5 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomcuarto', '$apcuarto', '$fecha', '$hora')";
+                            
+                            //Si se guarda correctamente a los participantes 
+                            if($conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true){
+                                $mail->send(); //Manda el correo
+                                echo json_encode('Se ha registrado correctamente!!');
+                            }
                         } 
                         
                         //Si hay un error en la base de datos, indica el error y no se manda el correo.
