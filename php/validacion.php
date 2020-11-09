@@ -1,6 +1,6 @@
 
 <?php
-
+    //librerías phpmailer
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
@@ -9,8 +9,7 @@
     require 'phpmailer/PHPMailer.php';
     require 'phpmailer/SMTP.php';
 
-    $mail = new PHPMailer(true);
-
+    $mail = new PHPMailer(true); //Se crea el objeto mail.
 
     //variables equipo
     $equipo = $_POST['equipo'];
@@ -45,6 +44,7 @@
     $nombreExiste = FALSE;
     $integranteExiste = FALSE;
 
+    //definir zona horaria, hora y fecha
     date_default_timezone_set('America/Mexico_City');
     $fecha =  date("Y-m-d"); 
     $hora = date("G:i:s");
@@ -182,14 +182,15 @@
         //Si no ha ingresado la carrera del cuarto integrante
         elseif ($cacuarto == '') {
             echo json_encode('Ingrese la carrera del cuarto integrante');
-        } else {
+        } else {  //Si se ha ingresado todo correctamente..
 
             include 'config.php'; //Inclución archivo configuración.
             
-
+            //conexion bd.
             $conexion = new mysqli($Host, $User, $Password, $Dbname, $Port, $Socket)
                 or die('No se pudo conectar a la base de datos' . mysqli_connect_error());
 
+            //Verificacion si el nombre de equipo ya existe..
             $resNombres = mysqli_query($conexion,"SELECT nombre_equipo FROM hackaton.equipos");
             $arrayNombres = array();
             while($consulta = mysqli_fetch_array($resNombres))
@@ -205,12 +206,13 @@
                 }
             }
 
+            //Si el nombre existe...
             if($nombreExiste == TRUE){
                 echo json_encode('Ya existe ese nombre de equipo!');
             }
-
+            //si no existe, sigue.
             else{
-
+                //Validacion que un integrante no esté en otro equipo.
                 $resApellidos = mysqli_query($conexion,"SELECT apellido FROM hackaton.participantes");
                 $arrayapellidos = array();
                 while($consulta2 = mysqli_fetch_array($resApellidos))
@@ -234,31 +236,25 @@
                         $integranteExiste = TRUE;
                     }
                 }
-
+                //Si algun integrante está en otro equipo...
                 if($integranteExiste == TRUE ){
                     echo json_encode('Un integrante del equipo ya forma parte de un equipo existente!');
                 }
-
+                //si todos los integrantes son nuevos integrantes, sigue.
                 else{
-
-                    
                     //Si no se cumple ninguna de esas condiciones, registrar..
                     $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `fecha_registro`, `hora_registro`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$fecha', '$hora', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
-                    //INSERT INTO `hackaton`.`equipos` (`idequipo`, `nombre_equipo`, `institucion`, `telefono`, `correo`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('1', 'Los Bocadines', 'Itsl', '8717321111', 'marcos@gmail.com', 'Marcos', 'Artiño', 'Informática', 'Juan', 'Liendo', 'Informática', 'Hector', 'Gurrola', 'Informática', 'Brandon', 'Zapata', 'Informática');
                     
-
-                    
-
                     try {
                         //Server settings
-                        $mail->SMTPDebug = 0;                      // Enable verbose debug output
-                        $mail->isSMTP();                                            // Send using SMTP
-                        $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-                        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                        $mail->SMTPDebug = 0;                                // Enable verbose debug output
+                        $mail->isSMTP();                                     // Send using SMTP
+                        $mail->Host       = 'smtp.gmail.com';                // Set the SMTP server to send through
+                        $mail->SMTPAuth   = true;                            // Enable SMTP authentication
                         $mail->Username   = $Maincorreo;                     // SMTP username
-                        $mail->Password   = $Pwd;                               // SMTP password
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                        $mail->Password   = $Pwd;                            // SMTP password
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                        $mail->Port       = 587;                             // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             
                         //Recipients
                         $mail->setFrom($Maincorreo, 'Hackaton');
@@ -342,31 +338,19 @@
                             //Si se guarda correctamente a los participantes 
                             if($conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true){
                                 $mail->send(); //Manda el correo
-                                echo json_encode('Se ha registrado correctamente!!');
+                                echo json_encode('Se ha registrado correctamente!!'); //Manda la notificacion.
                             }
                         } 
                         
                         //Si hay un error en la base de datos, indica el error y no se manda el correo.
                         else {
-                            echo json_encode('Error en la base de datos!!');
+                            echo json_encode('Error en la base de datos!!'); //No registra y no manda correo
                         }
-                    } catch (Exception $e) {
+                    } catch (Exception $e) { //No manda correo y no registra. 
                         echo json_encode('Error en el servidor de correos!!');
                     }
                 }
-
-
-
-
-                
-
             }
-
-            
-            
-            
         }
     }
-
-
 ?>

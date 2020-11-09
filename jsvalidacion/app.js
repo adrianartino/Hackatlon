@@ -4,28 +4,22 @@
 var formulario = document.getElementById('formularioregistro');
 var respuesta = document.getElementById('respuesta');
 
-var boton = document.getElementById('botonreg');
-boton.disbled = false;
-
 //detectar cuando el usuario de clic al botón.
 formulario.addEventListener('submit', function(e){
 
     e.preventDefault(); //pervenir recargar la pagina.
-    console.log('me diste un click xd');
-
-    
-
+    //console.log('me diste un click xd');
 
     var datos = new FormData(formulario);
 
     //Mandar datos a PHP.
-    fetch('php/validacion.php',{
-        method: 'POST',
-        body: datos
+    fetch('php/validacion.php',{ //fetch a la validación
+        method: 'POST', //Se envia todo con el método post
+        body: datos //Se envian los datos
     })
-        .then( res => res.json())
-        .then( data => {
-            console.log(data)
+        .then( res => res.json()) //respuesta json 
+        .then( data => { //respuesta almacenada en data.
+            console.log(data) //Imprimir data.
 
     //Validación info de equipo
             if(data === 'No se ha ingresado el nombre del equipo'){
