@@ -265,7 +265,7 @@
                         $mail->addAddress($correo, $equipo);     // Add a recipient
             
                         // Attachments
-                        $archivo = 'manual.pdf';
+                        $archivo = 'info_hackaton.pdf';
                         $mail->addAttachment($archivo,$archivo);          // Add attachments
                         //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
             
