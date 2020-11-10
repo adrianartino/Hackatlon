@@ -191,7 +191,7 @@
                 or die('No se pudo conectar a la base de datos' . mysqli_connect_error());
 
             //Verificacion si el nombre de equipo ya existe..
-            $resNombres = mysqli_query($conexion,"SELECT nombre_equipo FROM hackaton.equipos");
+            $resNombres = mysqli_query($conexion,"SELECT nombre_equipo FROM equipos");
             $arrayNombres = array();
             while($consulta = mysqli_fetch_array($resNombres))
             {
@@ -213,7 +213,7 @@
             //si no existe, sigue.
             else{
                 //Validacion que un integrante no esté en otro equipo.
-                $resApellidos = mysqli_query($conexion,"SELECT apellido FROM hackaton.participantes");
+                $resApellidos = mysqli_query($conexion,"SELECT apellido FROM participantes");
                 $arrayapellidos = array();
                 while($consulta2 = mysqli_fetch_array($resApellidos))
                 {
@@ -243,7 +243,7 @@
                 //si todos los integrantes son nuevos integrantes, sigue.
                 else{
                     //Si no se cumple ninguna de esas condiciones, registrar..
-                    $query = "INSERT INTO `hackaton`.`equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `fecha_registro`, `hora_registro`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$fecha', '$hora', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
+                    $query = "INSERT INTO `equipos` (`nombre_equipo`, `institucion`, `telefono`, `correo`, `fecha_registro`, `hora_registro`, `nomlider`, `aplider`, `calider`, `nom2`, `ap2`, `ca2`, `nom3`, `ap3`, `ca3`, `nom4`, `ap4`, `ca4`) VALUES ('$equipo', '$institucion', '$telefono', '$correo', '$fecha', '$hora', '$nombreLider', '$apellidoLider', '$carreraLider', '$nomsegundo', '$apsegundo', '$casegundo', '$nomtercero', '$aptercero', '$catercero', '$nomcuarto', '$apcuarto', '$cacuarto')";
                     
                     try {
                         //Server settings
@@ -330,10 +330,10 @@
                             
                             $ultimo_id = $conexion->insert_id; //Ultimo id agregado.
                             //Guardamos a los participantes una vez registrado.
-                            $query2 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nombreLider', '$apellidoLider', '$fecha', '$hora')";
-                            $query3 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomsegundo', '$apsegundo', '$fecha', '$hora')";
-                            $query4 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomtercero', '$aptercero', '$fecha', '$hora')";
-                            $query5 = "INSERT INTO `hackaton`.`participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomcuarto', '$apcuarto', '$fecha', '$hora')";
+                            $query2 = "INSERT INTO `participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nombreLider', '$apellidoLider', '$fecha', '$hora')";
+                            $query3 = "INSERT INTO `participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomsegundo', '$apsegundo', '$fecha', '$hora')";
+                            $query4 = "INSERT INTO `participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomtercero', '$aptercero', '$fecha', '$hora')";
+                            $query5 = "INSERT INTO `participantes` (`id_equipo`, `nombre`, `apellido`, `fecha_registro_p`, `hora_registro_p`) VALUES ('$ultimo_id', '$nomcuarto', '$apcuarto', '$fecha', '$hora')";
                             
                             //Si se guarda correctamente a los participantes 
                             if($conexion->query($query2) === true && $conexion->query($query3) === true && $conexion->query($query4) === true && $conexion->query($query5) === true){
