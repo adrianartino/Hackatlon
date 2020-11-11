@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `hackaton` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `hackaton`;
--- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: hackaton
+-- Host: localhost    Database: hacaton
 -- ------------------------------------------------------
--- Server version	8.0.22
+-- Server version	5.7.31-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,29 +23,15 @@ DROP TABLE IF EXISTS `equipos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `equipos` (
-  `idequipo` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_equipo` varchar(45) NOT NULL,
   `institucion` varchar(45) NOT NULL,
-  `telefono` varchar(45) NOT NULL,
-  `correo` varchar(45) NOT NULL,
-  `fecha_registro` date NOT NULL,
-  `hora_registro` time NOT NULL,
-  `nomlider` varchar(45) NOT NULL,
-  `aplider` varchar(45) NOT NULL,
-  `calider` varchar(45) NOT NULL,
-  `nom2` varchar(45) NOT NULL,
-  `ap2` varchar(45) NOT NULL,
-  `ca2` varchar(45) NOT NULL,
-  `nom3` varchar(45) NOT NULL,
-  `ap3` varchar(45) NOT NULL,
-  `ca3` varchar(45) NOT NULL,
-  `nom4` varchar(45) NOT NULL,
-  `ap4` varchar(45) NOT NULL,
-  `ca4` varchar(45) NOT NULL,
-  PRIMARY KEY (`idequipo`),
-  UNIQUE KEY `idequipo_UNIQUE` (`idequipo`),
+  `fecha_registro` date DEFAULT NULL,
+  `hora_registro` time DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idequipo_UNIQUE` (`id`),
   UNIQUE KEY `nombre_equipo_UNIQUE` (`nombre_equipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,16 +42,20 @@ DROP TABLE IF EXISTS `participantes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `participantes` (
-  `idparticipante` int NOT NULL AUTO_INCREMENT,
-  `id_equipo` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_equipo` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) NOT NULL,
-  `fecha_registro_p` date NOT NULL,
-  `hora_registro_p` time NOT NULL,
-  PRIMARY KEY (`idparticipante`),
+  `carrera` varchar(45) NOT NULL,
+  `telefono` int(11) DEFAULT NULL,
+  `correo` varchar(100) DEFAULT NULL,
+  `es_lider` tinyint(4) NOT NULL,
+  `fecha_registro` date NOT NULL,
+  `hora_registro` time NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `id_equipo` (`id_equipo`),
-  CONSTRAINT `participantes_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`idequipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  CONSTRAINT `participantes_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -79,4 +67,4 @@ CREATE TABLE `participantes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-08 23:57:09
+-- Dump completed on 2020-11-10 21:06:57
