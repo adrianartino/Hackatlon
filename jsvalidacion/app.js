@@ -248,7 +248,7 @@ formulario.addEventListener('submit', function(e) {
                     timerProgressVar: true,
                     allowOutsideClick: true
                 })
-            } else if (data === 'Ingrese un número de 8 dígitos') {
+            } else if (data === 'Ingrese un número de 10 dígitos') {
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
                     ${data}
@@ -1053,7 +1053,7 @@ formulario.addEventListener('submit', function(e) {
                     timerProgressVar: true,
                     allowOutsideClick: true
                 })
-            } else if (data === 'Ya existe ese nombre de equipo!') {
+            } else if (data === 'Ya existe el nombre de equipo!') {
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
                     ${data}
@@ -1156,6 +1156,25 @@ formulario.addEventListener('submit', function(e) {
                     confirmButtonText: 'Entendido',
                     confirmButtonColor: '#b82c54',
                     footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    allowOutsideClick: true
+                })
+            }else if (data === 'Faltan datos por ingresar!') {
+                respuesta.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ${data}
+                </div>
+                `
+                //No limpia errores.
+                //Alerta de error.
+                 Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Algo salió mal):',
+                    text: data,
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#b82c54',
+                    footer: '<span class= "foorojo">Hackaton 2020</span>',
+                    timer: 3000,
+                    timerProgressVar: true,
                     allowOutsideClick: true
                 })
             }

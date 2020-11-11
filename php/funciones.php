@@ -76,6 +76,7 @@ class LibOperaciones {
             $this->cacuarto=$cacuarto;
     }
 
+    //Devuelve true o false a validacion.php
     function ValidaCorreo()
     {
         if (filter_var($this->correo, FILTER_VALIDATE_EMAIL)) 
@@ -87,7 +88,7 @@ class LibOperaciones {
         }
     }
    
-   
+    //Valida si el usuario no ingresa ningun dato.
     function ValidaVacio() 
     {
         if (
@@ -108,6 +109,7 @@ class LibOperaciones {
 
     }
 
+    //Validar si existen datos , uno por uno.
     function ValidaExistenDatos()
     {
         if ($this->equipo === '') 
@@ -160,21 +162,21 @@ class LibOperaciones {
             return 'Ingrese la carrera del cuarto integrante';
         }
         
-        return 'OK';
+        return 'OK'; //Devuelve ok si se han ingresado todos los datos.
     }
 
 
     function ValidaLongitudTelefono()
     {
-        if ($this->telefono != '') 
+        if ($this->telefono != '') //Si se ingreso un telefono..
         {
-            $long = strlen($telefono);
+            $long = strlen($this->telefono); //Variable para guardar longitud de este.
 
-            if ($long < 10) 
+            if ($long < 10) //Si la long es menor a 10.
             {
                 return false;
             }
-            else
+            else //True
             {
                 return false;
             }
