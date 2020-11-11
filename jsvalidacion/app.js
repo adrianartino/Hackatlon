@@ -1,8 +1,11 @@
 //validación de registro.
 var formulario = document.getElementById('formularioregistro');
 var respuesta = document.getElementById('respuesta');
+
+
 //detectar cuando el usuario de clic al botón.
 formulario.addEventListener('submit', function(e) {
+    
 
     e.preventDefault(); //pervenir recargar la pagina.
     //console.log('me diste un click xd');
@@ -18,6 +21,14 @@ formulario.addEventListener('submit', function(e) {
         .then(data => { //respuesta almacenada en data.
             console.log(data) //Imprimir data.
 
+            //Bloqueo de boton hasta que se cumpla una condicion se habilita.
+            boton = document.getElementById('botonreg');
+            boton.setAttribute('disabled', "true");
+
+            //Muestra de que está validando datos. Cuando se cumple una condicion, desaparece.
+            divregistro = document.getElementById('divregistro');
+            divregistro.style.display = "block";
+            
             //Validación info de equipo
             if (data === 'No se ha ingresado el nombre del equipo') {
 
@@ -28,6 +39,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none"; //Oculta el cargando datos
                 error1.innerHTML = `
                 ${data}
                 `
@@ -83,6 +96,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error2.innerHTML = `
                 ${data}
                 `
@@ -142,6 +157,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error3.innerHTML = `
                 ${data}
                 `
@@ -198,6 +215,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error4.innerHTML = `
                 ${data}
                 `
@@ -254,6 +273,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error5.innerHTML = `
                 ${data}
                 `
@@ -310,6 +331,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
 
             } else if (data === 'No ha ingresado el correo electrónico') {
                 respuesta.innerHTML = `
@@ -317,7 +340,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error6.innerHTML = `
                 ${data}
                 `
@@ -373,7 +397,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error6.innerHTML = `
                 ${data}
                 `
@@ -430,7 +455,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error7.innerHTML = `
                 ${data}
                 `
@@ -489,7 +515,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 if (data === 'Ingrese el nombre del segundo integrante') {
                     error8.innerHTML = `
                     ${data}
@@ -628,6 +655,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 if (data === 'Ingrese el nombre del tercer integrante') {
                     error11.innerHTML = `
                     ${data}
@@ -766,6 +795,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 if (data === 'Ingrese el nombre del cuarto integrante') {
                     error14.innerHTML = `
                     ${data}
@@ -900,7 +931,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 //Limpiar otros errores
                 error1.innerHTML = ``
                 error2.innerHTML = ``
@@ -952,7 +984,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 //Limpiar otros errores
                 error1.innerHTML = ``
                 error2.innerHTML = ``
@@ -1006,7 +1039,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 //Limpiar otros errores
                 error1.innerHTML = ``
                 error2.innerHTML = ``
@@ -1059,6 +1093,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 error1.innerHTML = `
                 ${data}
                 `
@@ -1113,7 +1149,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
-
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                 //Limpiar otros errores
                 error1.innerHTML = ``
                 error2.innerHTML = ``
@@ -1164,6 +1201,9 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
+
                 //No limpia errores.
                 //Alerta de error.
                  Swal.fire({
@@ -1185,6 +1225,8 @@ formulario.addEventListener('submit', function(e) {
                     ${data}
                 </div>
                 `
+                boton.removeAttribute('disabled');
+                divregistro.style.display = "none";
                     //Alerta de error.
                 Swal.fire({
                     icon: 'error',

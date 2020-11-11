@@ -284,7 +284,12 @@
                                 <br>
                                 <center>
                                     <button type="submit" class="btn btn-success" id="botonreg">Registrar equipo</button>
-
+                                    <br><br>
+                                    <div class="w-25 p-3" style="background-color:  #b82c54; border-radius: 8px;" id="divregistro">
+                                        <h6 style="color: white;">
+                                            <span class="spinner-border spinner-border-sm mr-2"></span>
+                                            Validando datos..</h6>
+                                    </div>
                                 </center>
                             </form>
                             <!-- cuadro para ver si algo está bien -->
@@ -414,6 +419,11 @@
     <script src="jsvalidacion/app.js"></script>
     <!-- Implementación sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        var divregistro = document.getElementById("divregistro");
+        divregistro.style.display = "none";
+    </script>
 
     <script>
         var end = new Date('11/27/2020 00:01 AM');
