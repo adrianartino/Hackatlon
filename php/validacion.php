@@ -110,7 +110,7 @@
 
                 $con->query($query_insert_equipo);
 
-                echo $id_equipo = $con->insert_id;
+                $id_equipo = $con->insert_id;
 
                 $query= "INSERT INTO participantes(id_equipo,nombre,
                                                     apellido,carrera,
