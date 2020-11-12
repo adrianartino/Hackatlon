@@ -180,6 +180,7 @@
                     $mail->Subject = 'Registro Hackaton 2020';
                     $mail->AddEmbeddedImage("logooo3.png", "imagensita", "logooo3.png"); 
                     $mail->AddEmbeddedImage("zoom.png", "imagensitazoom", "zoom.png");
+                    $mail->AddEmbeddedImage("etapas2.png", "imagenetapas", "etapas2.png");
                     $mail->Body    = '<div>
                                 <center>
                                     <h1>Bienvenidos al Hackaton 2020!</h1>
@@ -224,7 +225,8 @@
                                             <td></td>
                                         </tr>
                                     </table>
-
+                                    <h1>Etapas del concurso</h1>
+                                    <img alt="PHPMailer" src="cid:imagenetapas">
                                     <h4>Estan listos para las 72 horas?</h4>
                                     <h5>Nos mantendremos en contacto contigo en los proximos días.</h5>
                                     <br>
