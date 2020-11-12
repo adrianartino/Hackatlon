@@ -230,11 +230,17 @@
                                     <h4>Estan listos para las 72 horas?</h4>
                                     <h5>Nos mantendremos en contacto contigo en los proximos días.</h5>
                                     <br>
-                                    <h1 style="color: #19B7E1;">Link de Zoom: </h1>
+                                    <h1 style="color: #19B7E1;">Link para videoconferencia concurso: </h1>
                                     <img alt="PHPMailer" src="cid:imagensitazoom">
-                                    <h2 style="color: black;">linkblablabla</h2>
-                                    <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 16 Hrs.</h3>
-                                </center>
+                                    <h2 style="color: black;">https://zoom.us/j/8506533715?pwd=ZjF5NlkzaFhRaWtJMm4yV3ZFUFRmdz09</h2>
+                                    <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 8 PM. - Inicio del concurso.</h3>
+                                    <br>
+                                    <h1 style="color: #19B7E1;">Link conferencia en vivo: </h1>
+                                    <h2>Buscando el éxito programando:El código fuente de un Ingeniero de Software.</h2>
+                                    <h2 style="color: #b82c54;">Ing. Luis Alvaro Flores Fierro - Org: Alexa, Amazon.</h2>
+                                    <h2 style="color: black;">https://zoom.us/j/98325934317?pwd=RmtHQ2VSeGdMWkhVZWZNOS82bm4yQT09</h2>
+                                    <h3>Te invitamos a participar en la conferencia en vivo el día Jueves 26 de Noviembre a las 5 PM.</h3>
+                                    </center>
                             </div>';
 
                     $mail->send();//Enviar el correo.
