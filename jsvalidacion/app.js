@@ -9,6 +9,13 @@ formulario.addEventListener('submit', function(e) {
 
     e.preventDefault(); //pervenir recargar la pagina.
     //console.log('me diste un click xd');
+    //Bloqueo de boton hasta que se cumpla una condicion se habilita.
+    boton = document.getElementById('botonreg');
+    boton.setAttribute('disabled', "true");
+
+    //Muestra de que está validando datos. Cuando se cumple una condicion, desaparece.
+    divregistro = document.getElementById('divregistro');
+    divregistro.style.display = "block";
 
     var datos = new FormData(formulario);
 
@@ -21,13 +28,7 @@ formulario.addEventListener('submit', function(e) {
         .then(data => { //respuesta almacenada en data.
             console.log(data) //Imprimir data.
 
-            //Bloqueo de boton hasta que se cumpla una condicion se habilita.
-            boton = document.getElementById('botonreg');
-            boton.setAttribute('disabled', "true");
-
-            //Muestra de que está validando datos. Cuando se cumple una condicion, desaparece.
-            divregistro = document.getElementById('divregistro');
-            divregistro.style.display = "block";
+            
             
             //Validación info de equipo
             if (data === 'No se ha ingresado el nombre del equipo') {
