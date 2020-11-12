@@ -977,8 +977,10 @@ formulario.addEventListener('submit', function(e) {
                     confirmButtonText: 'Entendido',
                     confirmButtonColor: '#b82c54',
                     footer: '<span class= "foorojo">Hackaton 2020</span>',
-                    allowOutsideClick: true
-                })
+                    allowOutsideClick: false
+                }).then(function(){
+                    window.location = 'index.html';
+                });
             } else if (data === 'Error en la base de datos!!') {
                 respuesta.innerHTML = `
                 <div class="alert alert-danger" role="alert">
