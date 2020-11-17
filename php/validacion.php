@@ -220,6 +220,7 @@
                                     <h4>Estan listos para las 72 horas?</h4>
                                     <h5>Ingresa a los links de las Videoconferencias en las Fechas Establecidas.</h5>
                                     <br>
+                                    
                                     <h1 style="color: #19B7E1;">Link para Videoconferencia Inicio del Concurso 27 de Noviembre a las 8 PM: </h1>
                                     <img alt="PHPMailer" src="cid:imagensitazoom">
                                     <h2 style="color: black;">
@@ -231,12 +232,7 @@
                                     <a href="https://us02web.zoom.us/j/84500367180?pwd=OWVTV1VlRURxTFRtamM5eTE2cE9Ddz09">https://us02web.zoom.us/j/84500367180?pwd=OWVTV1VlRURxTFRtamM5eTE2cE9Ddz09</a>
                                     </h2>
                                     <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 8 PM. - Inicio del concurso.</h3>
-                                    <br>
-                                    <h1 style="color: #19B7E1;">Link para videoconferencia concurso: </h1>
-                                    <img alt="PHPMailer" src="cid:imagensitazoom">
-                                    <h2 style="color: black;">https://us02web.zoom.us/j/81880745115?pwd=TE9MM0ZKM3RFVmFFZ2kybExEZWtaUT09</h2>
-                                    <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 8 PM. - Inicio del concurso.</h3>
-                                    <br>
+
                                     <h1 style="color: #19B7E1;">Link Conferencia en Vivo: </h1>
                                     <h2>Buscando el éxito programando:El código fuente de un Ingeniero de Software.</h2>
                                     <h2 style="color: #b82c54;">Ing. Luis Alvaro Flores Fierro - Org: Alexa, Amazon.</h2>
