@@ -232,7 +232,7 @@
                                     <br>
                                     <h1 style="color: #19B7E1;">Link para videoconferencia concurso: </h1>
                                     <img alt="PHPMailer" src="cid:imagensitazoom">
-                                    <h2 style="color: black;">https://zoom.us/j/8506533715?pwd=ZjF5NlkzaFhRaWtJMm4yV3ZFUFRmdz09</h2>
+                                    <h2 style="color: black;">https://us02web.zoom.us/j/81880745115?pwd=TE9MM0ZKM3RFVmFFZ2kybExEZWtaUT09</h2>
                                     <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 8 PM. - Inicio del concurso.</h3>
                                     <br>
                                     <h1 style="color: #19B7E1;">Link conferencia en vivo: </h1>
