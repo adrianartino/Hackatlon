@@ -218,7 +218,7 @@
                                     <h1>Etapas del concurso</h1>
                                     <img alt="PHPMailer" src="cid:imagenetapas">
                                     <h4>Estan listos para las 72 horas?</h4>
-                                    <h5>Ingresa a los links de la las videoconferencia en las fechas establecidas .</h5>
+                                    <h5>Ingresa a los links de las Videoconferencias en las Fechas Establecidas.</h5>
                                     <br>
                                     <h1 style="color: #19B7E1;">Link para Videoconferencia Inicio del Concurso 27 de Noviembre a las 8 PM: </h1>
                                     <img alt="PHPMailer" src="cid:imagensitazoom">
