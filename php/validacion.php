@@ -145,86 +145,107 @@
                     if($con->query($query_insert_participante1) and $con->query($query_insert_participante2)
                     and $con->query($query_insert_participante3) and $con->query($query_insert_participante4))
                     {
-                        $con->commit(); 
-                        //Server settings
-                        $mail->SMTPDebug = 0;                                // Enable verbose debug output
-                        $mail->isSMTP();                                     // Send using SMTP
-                        $mail->Host       = 'smtp.gmail.com';                // Set the SMTP server to send through
-                        $mail->SMTPAuth   = true;                            // Enable SMTP authentication
-                        $mail->Username   = $Maincorreo;                     // SMTP username
-                        $mail->Password   = $Pwd;                            // SMTP password
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                        $mail->Port       = 587;                             // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                    $con->commit(); //Ejecutar los querys y registrar en equipos y participantes
 
-                        //Recipients
-                        $mail->setFrom($Maincorreo, 'Hackaton');
-                        $mail->addAddress($correo, $equipo);     
+                    //Server settings
+                    $mail->SMTPDebug = 0;                                // Enable verbose debug output
+                    $mail->isSMTP();                                     // Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                // Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                            // Enable SMTP authentication
+                    $mail->Username   = $Maincorreo;                     // SMTP username
+                    $mail->Password   = $Pwd;                            // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->Port       = 587;                             // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-                        // Attachments
-                        $archivo = 'info_hackaton.pdf';
-                        $mail->addAttachment($archivo,$archivo);          // Add attachments
-                        //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+                    //Recipients
+                    $mail->setFrom($Maincorreo, 'Hackaton');
+                    $mail->addAddress($correo, $equipo);     // Add a recipient
 
-                        $mail->isHTML(true);                                  // Set email format to HTML
-                        $mail->Subject = 'Registro Hackaton 2020';
-                        $mail->AddEmbeddedImage("logooo3.png", "imagensita", "logooo3.png"); 
-                        $mail->AddEmbeddedImage("zoom.png", "imagensitazoom", "zoom.png");
-                        $mail->Body    = '<div>
-                                    <center>
-                                        <h1>Bienvenidos al Hackaton 2020!</h1>
-                                        <img alt="PHPMailer" src="cid:imagensita">
-                                        <h3 style="color: #b82c54;">Del 27 al 29 de Noviembre</h3>
-                                        <h1>Hola '.$nombreLider.' '.$apellidoLider.'!</h1>
-                                        <h3>Has registrado al equipo '.$equipo.' al Hackaton 2020!</h3>
+                    // Attachments
+                    $archivo = 'info_hackaton.pdf';
+                    $mail->addAttachment($archivo,$archivo);          // Add attachments
+                    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
-                                        <table>
-                                            <tr style="background-color: #b82c54;">
-                                                <th>Institución:</th>
-                                                <th>Integrantes:</th>
-                                                <th>Carreras:</th>
-                                                <th>Contacto:</th>
-                                            </tr>
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = 'Registro Hackaton 2020';
+                    $mail->AddEmbeddedImage("logooo3.png", "imagensita", "logooo3.png"); 
+                    $mail->AddEmbeddedImage("zoom.png", "imagensitazoom", "zoom.png");
+                    $mail->AddEmbeddedImage("etapas2.png", "imagenetapas", "etapas2.png");
+                    $mail->Body    = '<div>
+                                <center>
+                                    <h1>Bienvenidos al Hackaton 2020!</h1>
+                                    <img alt="PHPMailer" src="cid:imagensita">
+                                    <h3 style="color: #b82c54;">Del 27 al 29 de Noviembre</h3>
+                                    <h1>Hola '.$nombreLider.' '.$apellidoLider.'!</h1>
+                                    <h3>Has registrado al equipo '.$equipo.' al Hackaton 2020!</h3>
 
-                                            <tr>
-                                                <td>'.$institucion.'</td>
-                                                <td>'.$nombreLider.' '.$apellidoLider.'</td>
-                                                <td>'.$carreraLider.'</td>
-                                                <td>Telefono: '.$telefono.'</td>
-                                            </tr>
+                                    <table>
+                                        <tr style="background-color: #b82c54;">
+                                            <th>Institución:</th>
+                                            <th>Integrantes:</th>
+                                            <th>Carreras:</th>
+                                            <th>Contacto:</th>
+                                        </tr>
 
-                                            <tr>
-                                                <td></td>
-                                                <td>'.$nomsegundo.' '.$apsegundo.'</td>
-                                                <td>'.$casegundo.'</td>
-                                                <td>Correo: '.$correo.'</td>
-                                            </tr>
+                                        <tr>
+                                            <td>'.$institucion.'</td>
+                                            <td>'.$nombreLider.' '.$apellidoLider.'</td>
+                                            <td>'.$carreraLider.'</td>
+                                            <td>Telefono: '.$telefono.'</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td></td>
-                                                <td>'.$nomtercero.' '.$aptercero.'</td>
-                                                <td>'.$catercero.'</td>
-                                                <td></td>
-                                            </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>'.$nomsegundo.' '.$apsegundo.'</td>
+                                            <td>'.$casegundo.'</td>
+                                            <td>Correo: '.$correo.'</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td></td>
-                                                <td>'.$nomcuarto.' '.$apcuarto.'</td>
-                                                <td>'.$cacuarto.'</td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
+                                        <tr>
+                                            <td></td>
+                                            <td>'.$nomtercero.' '.$aptercero.'</td>
+                                            <td>'.$catercero.'</td>
+                                            <td></td>
+                                        </tr>
 
-                                        <h4>Estan listos para las 72 horas?</h4>
-                                        <h5>Nos mantendremos en contacto contigo en los proximos días.</h5>
-                                        <br>
-                                        <h1 style="color: #19B7E1;">Link de Zoom: </h1>
-                                        <img alt="PHPMailer" src="cid:imagensitazoom">
-                                        <h2 style="color: black;">linkblablabla</h2>
-                                        <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 16 Hrs.</h3>
+                                        <tr>
+                                            <td></td>
+                                            <td>'.$nomcuarto.' '.$apcuarto.'</td>
+                                            <td>'.$cacuarto.'</td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                    <h1>Etapas del concurso</h1>
+                                    <img alt="PHPMailer" src="cid:imagenetapas">
+                                    <h4>Estan listos para las 72 horas?</h4>
+                                    <h5>Ingresa a los links de la las videoconferencia en las fechas establecidas .</h5>
+                                    <br>
+                                    <h1 style="color: #19B7E1;">Link para Videoconferencia Inicio del Concurso 27 de Noviembre a las 8 PM: </h1>
+                                    <img alt="PHPMailer" src="cid:imagensitazoom">
+                                    <h2 style="color: black;">
+                                    <a href="https://us02web.zoom.us/j/81880745115?pwd=TE9MM0ZKM3RFVmFFZ2kybExEZWtaUT09">https://us02web.zoom.us/j/81880745115?pwd=TE9MM0ZKM3RFVmFFZ2kybExEZWtaUT09</a>
+                                    </h2>
+                                    <h1 style="color: #19B7E1;">Link para Videoconferencia Continuación de Concurso 28 y 29 de Noviembre a las 9 AM: </h1>
+                                    <img alt="PHPMailer" src="cid:imagensitazoom">
+                                    <h2 style="color: black;">
+                                    <a href="https://us02web.zoom.us/j/84500367180?pwd=OWVTV1VlRURxTFRtamM5eTE2cE9Ddz09">https://us02web.zoom.us/j/84500367180?pwd=OWVTV1VlRURxTFRtamM5eTE2cE9Ddz09</a>
+                                    </h2>
+                                    <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 8 PM. - Inicio del concurso.</h3>
+                                    <br>
+                                    <h1 style="color: #19B7E1;">Link para videoconferencia concurso: </h1>
+                                    <img alt="PHPMailer" src="cid:imagensitazoom">
+                                    <h2 style="color: black;">https://us02web.zoom.us/j/81880745115?pwd=TE9MM0ZKM3RFVmFFZ2kybExEZWtaUT09</h2>
+                                    <h3>Recuerda entrar con tu cuenta de Zoom el dia 27 de Noviembre a las 8 PM. - Inicio del concurso.</h3>
+                                    <br>
+                                    <h1 style="color: #19B7E1;">Link Conferencia en Vivo: </h1>
+                                    <h2>Buscando el éxito programando:El código fuente de un Ingeniero de Software.</h2>
+                                    <h2 style="color: #b82c54;">Ing. Luis Alvaro Flores Fierro - Org: Alexa, Amazon.</h2>
+                                    <h2 style="color: black;">https://zoom.us/j/98325934317?pwd=RmtHQ2VSeGdMWkhVZWZNOS82bm4yQT09</h2>
+                                    <h3>Te invitamos a participar en la conferencia en vivo el día Jueves 26 de Noviembre a las 5 PM.</h3>
                                     </center>
-                                </div>';
+                            </div>';
 
-                    $mail->send();
+                    $mail->send();//Enviar el correo.
 
                     echo json_encode('Se ha registrado correctamente!!');
                     }
