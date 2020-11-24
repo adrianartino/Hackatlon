@@ -130,7 +130,9 @@ class LibOperaciones {
         elseif ($this->correo == '') {
             return 'No ha ingresado el correo electrónico';
         }
-        
+        elseif ($this->telefono == '') {
+            return 'No ha ingresado el telefono o celular';
+        }
         elseif ($this->carreraLider == '') {
             return 'Ingrese la carrera del lider de equipo';
         }
